@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables for Divine Fatherhood Design System */
+@layer base {
+  :root {
+    /* Divine Fatherhood Brand Colors */
+    --df-bg: #000000;
+    --df-gold: #FFD700; 
+    --df-gold-1: #B8860B;
+    --df-gold-2: #DAA520;
+    --df-white: #FFFFFF;
+    
+    /* Design System Variables */
+    --df-radius: 16px;
+    --df-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    --df-shadow-gold: 0 0 30px rgba(255, 215, 0, 0.3);
+    
+    /* Font Variables */
+    --font-montserrat: 'Montserrat', system-ui, sans-serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
+    
+    /* Shadcn/UI Theme Variables */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 51 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 51 100% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+    font-size: 100%;
+  }
+  
+  body {
+    @apply bg-df-bg text-df-white font-inter antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold leading-tight tracking-tight;
+  }
+  
+  /* Screen Reader Only */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  /* Focus Visible Styles */
+  .focus-visible:focus {
+    @apply outline-none ring-2 ring-df-gold ring-offset-2 ring-offset-df-bg;
+  }
+}
+
+@layer components {
+  /* Divine Fatherhood Brand Components */
+  .df-heading {
+    @apply font-montserrat font-extrabold text-df-white;
+  }
+  
+  .df-h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl mb-6;
+  }
+  
+  .df-h2 {
+    @apply text-3xl md:text-4xl mb-4;
+  }
+  
+  .df-h3 {
+    @apply text-2xl md:text-3xl mb-3;
+  }
+  
+  .df-body {
+    @apply text-base leading-relaxed mb-4;
+  }
+  
+  .df-body-lg {
+    @apply text-lg leading-relaxed mb-4;
+  }
+  
+  .df-emphasis {
+    @apply uppercase font-bold tracking-wider text-df-gold;
+  }
+  
+  .df-crown-glow {
+    @apply text-df-gold drop-shadow-lg;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+  
+  /* Layout Components */
+  .df-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .df-section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .df-section-sm {
+    @apply py-12 md:py-16;
+  }
+  
+  /* Button Variants */
+  .df-btn-gold-solid {
+    @apply bg-df-gold text-df-bg border-df-gold hover:bg-df-gold-1 hover:border-df-gold-1;
+  }
+  
+  .df-btn-gold-outline {
+    @apply bg-transparent text-df-gold border-df-gold hover:bg-df-gold hover:text-df-bg;
+  }
+  
+  .df-btn-ghost {
+    @apply bg-transparent text-df-white border-df-white hover:bg-df-white hover:text-df-bg;
+  }
+  
+  /* Card Component */
+  .df-card {
+    @apply bg-white/5 border border-df-gold/20 rounded-2xl p-8 backdrop-blur-sm transition-all duration-300 hover:border-df-gold hover:shadow-df-shadow-gold hover:-translate-y-1;
+  }
+  
+  /* Hero Component */
+  .df-hero {
+    @apply min-h-screen flex items-center relative overflow-hidden;
+    background: radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.1) 0%, var(--df-bg) 50%);
+  }
+  
+  .df-hero::before {
+    content: '';
+    @apply absolute -top-1/2 -left-1/2 w-[200%] h-[200%] pointer-events-none;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+    animation: crown-glow 8s ease-in-out infinite alternate;
+  }
+  
+  /* Navigation */
+  .df-nav {
+    @apply fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-df-gold/20 z-50 py-4;
+  }
+  
+  /* Newsletter Form */
+  .df-newsletter {
+    @apply bg-df-gold/10 border-2 border-df-gold rounded-2xl p-12 text-center relative;
+  }
+  
+  /* Testimonial */
+  .df-testimonial {
+    @apply bg-df-gold/10 border-l-4 border-df-gold rounded-r-2xl p-8 relative;
+  }
+  
+  .df-testimonial::before {
+    content: '"';
+    @apply absolute -top-2 left-4 text-6xl text-df-gold leading-none;
+    font-family: Georgia, serif;
+  }
+  
+  /* Pricing Component */
+  .df-pricing {
+    @apply bg-white/5 border-2 border-df-gold rounded-2xl p-8 text-center relative overflow-hidden;
+  }
+  
+  .df-pricing::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-1;
+    background: linear-gradient(90deg, var(--df-gold) 0%, var(--df-gold-1) 100%);
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-crown-glow {
+    animation: crown-glow 8s ease-in-out infinite alternate;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  
+  /* Responsive utilities */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+  
+  /* Accessibility utilities */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  @media (prefers-contrast: high) {
+    :root {
+      --df-gold: #FFFF00;
+    }
+  }
+}
+
+/* Print styles */
+@media print {
+  .df-nav,
+  .df-btn,
+  .df-hero-badge {
+    @apply hidden;
+  }
+  
+  body {
+    @apply text-black bg-white;
+  }
+  
+  .df-hero-title,
+  .df-card-title,
+  .df-emphasis {
+    @apply text-black;
+  }
+}
