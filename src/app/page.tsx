@@ -6,7 +6,8 @@ import {
   Card, 
   YouTubeGrid, 
   NewsletterForm,
-  Testimonial 
+  Testimonial,
+  PersonalStory
 } from '@/components/divine-fatherhood'
 import { trackEvent } from '@/lib/utils'
 import { Crown } from 'lucide-react'
@@ -35,6 +36,9 @@ export default function HomePage() {
         }}
         badge="Sammy 'MrSixPack' • Delaware • Expecting Father of 2"
       />
+
+      {/* Personal Story Section - Dynamic with Your Photos */}
+      <PersonalStory />
 
       {/* Framework Section */}
       <section className="df-section">
