@@ -33,7 +33,7 @@ export function UltraEpicExperience() {
       title: 'FATHER OF 2 COMING SOON',
       subtitle: 'THE REAL REASON EVERYTHING CHANGED',
       image: '/images/story/real-reason-changed.png',
-      badge: '🍼 BABY #2 ARRIVING IN 2 MONTHS',
+      badge: 'BABY #2 ARRIVING IN 2 MONTHS',
       content: 'With our second son on the way, the calling becomes CRYSTAL CLEAR. This isn\'t just about being a father — it\'s about being DIVINELY APPOINTED to raise world-changers.',
       points: [
         { text: 'Legacy Over Likes', icon: Trophy, color: 'from-gold-400 to-yellow-500' },
@@ -343,45 +343,38 @@ export function UltraEpicExperience() {
               {index === 0 && (
                 <div className="text-center space-y-12 animate-fade-in">
                   {section.badge && (
-                    <div className="inline-flex items-center gap-3 bg-gradient-to-r from-df-gold/20 to-yellow-400/20 border border-df-gold/40 text-df-gold px-8 py-4 rounded-full font-bold text-lg backdrop-blur-xl shadow-2xl shadow-df-gold/20">
-                      <Crown className="h-6 w-6 animate-pulse" />
-                      {section.badge}
+                    <div className="premium-glass inline-flex items-center gap-4 text-df-gold px-12 py-6 font-semibold text-lg tracking-wide">
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-df-gold to-yellow-400 animate-pulse"></div>
+                      <span className="premium-body">{section.badge}</span>
                     </div>
                   )}
                   
-                  <h1 className="text-7xl md:text-[12rem] lg:text-[15rem] font-black text-white mb-8 tracking-tighter leading-none">
-                    <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent animate-pulse text-shimmer drop-shadow-2xl">
+                  <h1 className="premium-heading text-7xl md:text-[12rem] lg:text-[16rem] text-white mb-12 tracking-tighter leading-[0.8]">
+                    <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent" style={{animation: 'premiumGlow 4s ease-in-out infinite'}}>
                       {section.title}
                     </span>
                   </h1>
                   
-                  <div className="text-3xl md:text-6xl lg:text-7xl text-df-gold/90 font-bold mb-12 animate-float tracking-wide">
+                  <div className="premium-heading text-3xl md:text-6xl lg:text-8xl text-df-gold/95 font-semibold mb-16 tracking-wide" style={{animation: 'premiumBreathe 6s ease-in-out infinite'}}>
                     {section.subtitle}
                   </div>
                   
-                  <p className="text-2xl md:text-4xl lg:text-5xl text-df-white/95 max-w-7xl mx-auto leading-relaxed font-medium">
+                  <p className="premium-body text-2xl md:text-4xl lg:text-6xl text-df-white/95 max-w-8xl mx-auto leading-relaxed font-normal">
                     {section.content}
                   </p>
                   
-                  {/* Epic CTA Buttons */}
-                  <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mt-16">
-                    <Button
-                      size="xl"
-                      className="bg-gradient-to-r from-df-gold via-yellow-400 to-df-gold text-black hover:from-yellow-400 hover:to-df-gold text-2xl px-16 py-8 rounded-3xl font-black shadow-2xl shadow-df-gold/50 transform hover:scale-110 transition-all duration-500 border-2 border-yellow-400/50"
+                  {/* Premium CTA Buttons */}
+                  <div className="flex flex-col lg:flex-row gap-12 justify-center items-center mt-24">
+                    <button
                       onClick={nextSection}
+                      className="premium-button text-2xl px-20 py-8 font-semibold tracking-wide"
                     >
-                      <Crown className="h-8 w-8 mr-4" />
                       {section.cta}
-                      <Zap className="h-8 w-8 ml-4" />
-                    </Button>
+                    </button>
                     
-                    <Button
-                      size="xl"
-                      className="bg-transparent border-3 border-df-gold text-df-gold hover:bg-df-gold hover:text-black text-xl px-12 py-6 rounded-3xl font-bold transform hover:scale-110 transition-all duration-500 backdrop-blur-xl"
-                    >
-                      <Play className="h-6 w-6 mr-3" />
+                    <button className="premium-glass border border-df-gold/30 text-df-gold hover:border-df-gold/60 text-xl px-16 py-6 rounded-2xl font-medium tracking-wide transition-all duration-300 hover:scale-105">
                       Watch Transformation
-                    </Button>
+                    </button>
                   </div>
 
                   {/* Ultra Stats */}
@@ -404,23 +397,23 @@ export function UltraEpicExperience() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                   <div className={`space-y-10 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}>
                     {section.badge && (
-                      <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-400/40 text-emerald-400 px-8 py-4 rounded-full font-black text-xl backdrop-blur-xl shadow-xl">
-                        <Heart className="h-6 w-6 animate-pulse" />
-                        {section.badge}
+                      <div className="premium-glass inline-flex items-center gap-4 text-emerald-400 px-12 py-6 font-medium text-xl tracking-wide">
+                        <div className="w-3 h-3 rounded-full bg-gradient-to-r from-emerald-400 to-blue-400 animate-pulse"></div>
+                        <span className="premium-body">{section.badge}</span>
                       </div>
                     )}
                     
-                    <h2 className="text-6xl md:text-8xl lg:text-9xl font-black text-df-gold leading-tight drop-shadow-2xl tracking-tighter">
+                    <h2 className="premium-heading text-6xl md:text-8xl lg:text-[10rem] text-df-gold leading-[0.8] tracking-tighter mb-8" style={{animation: 'premiumGlow 3s ease-in-out infinite'}}>
                       {section.title}
                     </h2>
                     
                     {section.subtitle && (
-                      <h3 className="text-3xl md:text-5xl lg:text-6xl text-df-white/95 font-bold tracking-wide">
+                      <h3 className="premium-heading text-3xl md:text-5xl lg:text-7xl text-df-white/95 font-medium tracking-wide mb-12">
                         {section.subtitle}
                       </h3>
                     )}
                     
-                    <p className="text-2xl md:text-3xl lg:text-4xl text-df-white/95 leading-relaxed font-medium max-w-6xl">
+                    <p className="premium-body text-2xl md:text-3xl lg:text-5xl text-df-white/95 leading-relaxed font-light max-w-7xl">
                       {section.content}
                     </p>
 
@@ -478,16 +471,16 @@ export function UltraEpicExperience() {
 
                     {/* Enhanced Roles - DADDY STRENGTH DIFFERENT */}
                     {section.roles && (
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-24">
                         {section.roles.map((role, i) => (
-                          <div key={i} className="text-center bg-gradient-to-br from-df-gold/20 to-yellow-400/20 border-2 border-df-gold/40 rounded-3xl p-12 backdrop-blur-xl hover:scale-110 hover:rotate-1 transition-all duration-700 shadow-2xl shadow-df-gold/30 group cursor-pointer">
-                            <div className="bg-gradient-to-br from-df-gold/30 to-yellow-400/30 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-8 group-hover:scale-125 transition-all duration-500">
-                              <role.icon className="h-12 w-12 text-df-gold group-hover:animate-pulse" />
+                          <div key={i} className="premium-card text-center group cursor-pointer">
+                            <div className="premium-glass w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-12 group-hover:scale-110 transition-all duration-500">
+                              <role.icon className="h-16 w-16 text-df-gold" />
                             </div>
-                            <h4 className="text-df-gold font-black text-3xl mb-4 tracking-wide">{role.title}</h4>
-                            <p className="text-df-white/90 text-xl font-bold mb-4">{role.desc}</p>
-                            <p className="text-df-white/80 text-lg mb-6 leading-relaxed">{role.detail}</p>
-                            <div className="text-df-gold font-black text-lg uppercase tracking-widest bg-gradient-to-r from-df-gold/20 to-yellow-400/20 rounded-full px-6 py-3 inline-block">
+                            <h4 className="premium-heading text-df-gold text-4xl mb-6 tracking-wide">{role.title}</h4>
+                            <p className="premium-body text-df-white/90 text-2xl font-medium mb-6">{role.desc}</p>
+                            <p className="premium-body text-df-white/70 text-xl mb-8 leading-relaxed">{role.detail}</p>
+                            <div className="premium-glass text-df-gold font-medium text-lg tracking-wide px-8 py-4 inline-block">
                               {role.power}
                             </div>
                           </div>

@@ -109,6 +109,62 @@ body {
   75% { transform: translateY(-8px) rotate(-1deg); }
 }
 
+/* Premium Apple-Style Animations */
+@keyframes premiumFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes premiumSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes premiumGlow {
+  0%, 100% {
+    text-shadow: 0 0 30px rgba(207, 175, 77, 0.4);
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 0 0 60px rgba(207, 175, 77, 0.8);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes premiumPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes premiumBreathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
 @keyframes slideInLeft {
   from { 
     opacity: 0; 
@@ -333,8 +389,8 @@ body {
   box-shadow: 0 10px 30px rgba(207, 175, 77, 0.4);
 }
 
-/* Epic Full-Screen Sections */
-.epic-section {
+/* Premium Apple-Style Sections */
+.premium-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -342,6 +398,85 @@ body {
   position: relative;
   overflow: hidden;
   scroll-snap-align: start;
+  scroll-behavior: smooth;
+}
+
+/* Apple-Style Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+/* Premium Typography */
+.premium-heading {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.premium-body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Premium Glass Effect */
+.premium-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Premium Button Styles */
+.premium-button {
+  background: linear-gradient(135deg, #cfaf4d 0%, #ffd700 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
+
+.premium-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(207, 175, 77, 0.4);
+}
+
+.premium-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Premium Card Styles */
+.premium-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(207, 175, 77, 0.2);
+  border-radius: 24px;
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
+
+.premium-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(207, 175, 77, 0.1);
+  border-color: rgba(207, 175, 77, 0.4);
 }
 
 .epic-content {
