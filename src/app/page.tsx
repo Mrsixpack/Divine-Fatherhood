@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { EpicStoryExperience } from '@/components/divine-fatherhood/epic-story-experience'
+import { UltraEpicExperience } from '@/components/divine-fatherhood/ultra-epic-experience'
 import { 
   Card, 
   YouTubeGrid, 
@@ -24,8 +24,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* 🚀 EPIC FULL-SCREEN CINEMATIC STORY EXPERIENCE 🚀 */}
-      <EpicStoryExperience />
+      {/* 🔥 ULTRA EPIC 10/10 CINEMATIC MASTERPIECE EXPERIENCE 🔥 */}
+      <UltraEpicExperience />
 
       {/* YouTube Grid */}
       <section className="df-section">
