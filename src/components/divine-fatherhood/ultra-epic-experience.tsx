@@ -324,8 +324,8 @@ export function UltraEpicExperience() {
               priority={index === 0}
               quality={100}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/60 to-black/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-transparent to-black/90"></div>
             {/* Animated overlay */}
             <div 
               className="absolute inset-0 bg-gradient-radial from-df-gold/10 via-transparent to-transparent transition-opacity duration-1000"
@@ -336,8 +336,8 @@ export function UltraEpicExperience() {
           </div>
 
           {/* Content */}
-          <div className="relative z-20 df-container w-full">
-            <div className="max-w-7xl mx-auto">
+          <div className="relative z-20 w-full px-6 lg:px-12">
+            <div className="max-w-8xl mx-auto">
               
               {/* HERO SECTION - ABSOLUTELY INSANE */}
               {index === 0 && (
@@ -349,17 +349,17 @@ export function UltraEpicExperience() {
                     </div>
                   )}
                   
-                  <h1 className="text-6xl md:text-9xl font-black text-white mb-8 tracking-tight leading-none">
+                  <h1 className="text-7xl md:text-[12rem] lg:text-[15rem] font-black text-white mb-8 tracking-tighter leading-none">
                     <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent animate-pulse text-shimmer drop-shadow-2xl">
                       {section.title}
                     </span>
                   </h1>
                   
-                  <div className="text-2xl md:text-4xl text-df-gold/90 font-bold mb-8 animate-float">
+                  <div className="text-3xl md:text-6xl lg:text-7xl text-df-gold/90 font-bold mb-12 animate-float tracking-wide">
                     {section.subtitle}
                   </div>
                   
-                  <p className="text-xl md:text-3xl text-df-white/95 max-w-5xl mx-auto leading-relaxed font-medium">
+                  <p className="text-2xl md:text-4xl lg:text-5xl text-df-white/95 max-w-7xl mx-auto leading-relaxed font-medium">
                     {section.content}
                   </p>
                   
@@ -410,17 +410,17 @@ export function UltraEpicExperience() {
                       </div>
                     )}
                     
-                    <h2 className="text-5xl md:text-7xl font-black text-df-gold leading-tight drop-shadow-2xl">
+                    <h2 className="text-6xl md:text-8xl lg:text-9xl font-black text-df-gold leading-tight drop-shadow-2xl tracking-tighter">
                       {section.title}
                     </h2>
                     
                     {section.subtitle && (
-                      <h3 className="text-2xl md:text-3xl text-df-white/95 font-bold">
+                      <h3 className="text-3xl md:text-5xl lg:text-6xl text-df-white/95 font-bold tracking-wide">
                         {section.subtitle}
                       </h3>
                     )}
                     
-                    <p className="text-xl md:text-2xl text-df-white/95 leading-relaxed font-medium">
+                    <p className="text-2xl md:text-3xl lg:text-4xl text-df-white/95 leading-relaxed font-medium max-w-6xl">
                       {section.content}
                     </p>
 
@@ -476,6 +476,25 @@ export function UltraEpicExperience() {
                       </div>
                     )}
 
+                    {/* Enhanced Roles - DADDY STRENGTH DIFFERENT */}
+                    {section.roles && (
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
+                        {section.roles.map((role, i) => (
+                          <div key={i} className="text-center bg-gradient-to-br from-df-gold/20 to-yellow-400/20 border-2 border-df-gold/40 rounded-3xl p-12 backdrop-blur-xl hover:scale-110 hover:rotate-1 transition-all duration-700 shadow-2xl shadow-df-gold/30 group cursor-pointer">
+                            <div className="bg-gradient-to-br from-df-gold/30 to-yellow-400/30 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-8 group-hover:scale-125 transition-all duration-500">
+                              <role.icon className="h-12 w-12 text-df-gold group-hover:animate-pulse" />
+                            </div>
+                            <h4 className="text-df-gold font-black text-3xl mb-4 tracking-wide">{role.title}</h4>
+                            <p className="text-df-white/90 text-xl font-bold mb-4">{role.desc}</p>
+                            <p className="text-df-white/80 text-lg mb-6 leading-relaxed">{role.detail}</p>
+                            <div className="text-df-gold font-black text-lg uppercase tracking-widest bg-gradient-to-r from-df-gold/20 to-yellow-400/20 rounded-full px-6 py-3 inline-block">
+                              {role.power}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
                     {/* Final CTA */}
                     {section.finalCta && (
                       <div className="text-center mt-16">
@@ -499,16 +518,18 @@ export function UltraEpicExperience() {
                   {/* Enhanced Image Side */}
                   <div className={`${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
                     <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-br from-df-gold/30 to-yellow-400/30 rounded-3xl blur-3xl scale-110 group-hover:scale-125 transition-all duration-700"></div>
-                      <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-df-gold/40 border-2 border-df-gold/30 transform group-hover:scale-105 group-hover:rotate-1 transition-all duration-700">
+                      <div className="absolute inset-0 bg-gradient-to-br from-df-gold/40 to-yellow-400/40 rounded-3xl blur-3xl scale-110 group-hover:scale-125 transition-all duration-700"></div>
+                      <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-df-gold/60 border-4 border-df-gold/40 transform group-hover:scale-105 transition-all duration-700 backdrop-blur-sm">
                         <Image
                           src={section.image}
                           alt={section.title}
-                          width={700}
-                          height={500}
-                          className="w-full h-auto object-cover"
+                          width={900}
+                          height={700}
+                          className="w-full h-[600px] object-cover"
+                          quality={100}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-df-gold/10 via-transparent to-transparent"></div>
                       </div>
                     </div>
                   </div>

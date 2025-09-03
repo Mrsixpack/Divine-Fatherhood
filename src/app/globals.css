@@ -82,6 +82,33 @@ body {
   }
 }
 
+@keyframes modernPulse {
+  0%, 100% { 
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% { 
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes smoothGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(207, 175, 77, 0.4), 0 0 40px rgba(207, 175, 77, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(207, 175, 77, 0.8), 0 0 80px rgba(207, 175, 77, 0.4);
+  }
+}
+
+@keyframes epicFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(1deg); }
+  50% { transform: translateY(-15px) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(-1deg); }
+}
+
 @keyframes slideInLeft {
   from { 
     opacity: 0; 
@@ -153,6 +180,31 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.animate-modern-pulse {
+  animation: modernPulse 2s ease-in-out infinite;
+}
+
+.animate-smooth-glow {
+  animation: smoothGlow 3s ease-in-out infinite;
+}
+
+.animate-epic-float {
+  animation: epicFloat 8s ease-in-out infinite;
+}
+
+/* Modern Full-Screen Layouts */
+.modern-hero {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.sleek-overlay {
+  background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.95) 100%);
+  backdrop-filter: blur(2px);
 }
 
 .text-shimmer {
