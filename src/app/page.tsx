@@ -8,7 +8,6 @@ import {
   NewsletterForm,
   Testimonial
 } from '@/components/divine-fatherhood'
-import { StoryJourney } from '@/components/divine-fatherhood/story-journey-simple'
 import { trackEvent } from '@/lib/utils'
 import { Crown } from 'lucide-react'
 
@@ -37,8 +36,55 @@ export default function HomePage() {
         badge="Sammy 'MrSixPack' Williams • Delaware • Father of 2 (Soon)"
       />
 
-      {/* Story Journey Section - Your Transformation Story */}
-      <StoryJourney />
+      {/* Transformation Story Section */}
+      <section className="df-section bg-white/5">
+        <div className="df-container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="df-heading df-h2 df-crown-glow mb-8">
+              Father of 2 Coming Soon - God's Plan Revealed
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+              <div>
+                <img src="/images/story/real-reason-changed.png" alt="The real reason everything changed" className="w-full rounded-xl shadow-lg" />
+              </div>
+              <div className="text-left space-y-4">
+                <h3 className="df-heading text-xl text-df-gold">The Real Reason Everything Changed</h3>
+                <p className="df-body text-df-white/90">
+                  With our second son on the way in 2 months, the calling becomes crystal clear. 
+                  This isn't just about being a father — it's about being divinely appointed to raise world-changers.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <Crown className="h-4 w-4 text-df-gold" />
+                    <span className="text-df-gold">Legacy Over Likes</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Crown className="h-4 w-4 text-df-gold" />
+                    <span className="text-df-gold">Kingdom Over Empire</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Crown className="h-4 w-4 text-df-gold" />
+                    <span className="text-df-gold">Purpose Over Pressure</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+              <div className="text-left space-y-4">
+                <h3 className="df-heading text-xl text-df-gold">Daddy Strength Different</h3>
+                <p className="df-body text-df-white/90">
+                  This isn't just physical strength. This is strength with PURPOSE. 
+                  Strength to protect, provide, and lead by example.
+                </p>
+              </div>
+              <div>
+                <img src="/images/story/daddy-strength.png" alt="Daddy Strength Different" className="w-full rounded-xl shadow-lg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Core Message Section */}
       <section className="df-section bg-white/5" id="story">
