@@ -239,7 +239,7 @@ export function UltraEpicExperience() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [currentSection, isScrolling])
+  }, [currentSection, isScrolling, sections.length])
 
   if (!isLoaded) {
     return (
