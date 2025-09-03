@@ -2,242 +2,359 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
-/* CSS Variables for Divine Fatherhood Design System */
-@layer base {
-  :root {
-    /* Divine Fatherhood Brand Colors */
-    --df-bg: #000000;
-    --df-gold: #FFD700; 
-    --df-gold-1: #B8860B;
-    --df-gold-2: #DAA520;
-    --df-white: #FFFFFF;
-    
-    /* Design System Variables */
-    --df-radius: 16px;
-    --df-shadow: 0 10px 30px rgba(0,0,0,0.35);
-    --df-shadow-gold: 0 0 30px rgba(255, 215, 0, 0.3);
-    
-    /* Font Variables */
-    --font-montserrat: 'Montserrat', system-ui, sans-serif;
-    --font-inter: 'Inter', system-ui, sans-serif;
-    
-    /* Shadcn/UI Theme Variables */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 51 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 51 100% 50%;
-    --radius: 0.5rem;
+/* Divine Fatherhood Custom Styles */
+:root {
+  --df-bg: #0a0a0a;
+  --df-gold: #cfaf4d;
+  --df-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--df-bg);
+  color: var(--df-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* EPIC Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@keyframes slideInLeft {
+  from { 
+    opacity: 0; 
+    transform: translateX(-100px);
   }
-  
-  html {
-    @apply scroll-smooth;
-    font-size: 100%;
-  }
-  
-  body {
-    @apply bg-df-bg text-df-white font-inter antialiased;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-montserrat font-bold leading-tight tracking-tight;
-  }
-  
-  /* Screen Reader Only */
-  .sr-only {
-    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
-    clip: rect(0, 0, 0, 0);
-  }
-  
-  /* Focus Visible Styles */
-  .focus-visible:focus {
-    @apply outline-none ring-2 ring-df-gold ring-offset-2 ring-offset-df-bg;
+  to { 
+    opacity: 1; 
+    transform: translateX(0);
   }
 }
 
-@layer components {
-  /* Divine Fatherhood Brand Components */
-  .df-heading {
-    @apply font-montserrat font-extrabold text-df-white;
+@keyframes slideInRight {
+  from { 
+    opacity: 0; 
+    transform: translateX(100px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+
+@keyframes goldGlow {
+  0%, 100% { 
+    text-shadow: 0 0 20px rgba(207, 175, 77, 0.3);
+  }
+  50% { 
+    text-shadow: 0 0 40px rgba(207, 175, 77, 0.6), 0 0 60px rgba(207, 175, 77, 0.3);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 0.3;
+    scale: 1;
+  }
+  50% { 
+    opacity: 0.6;
+    scale: 1.05;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Utility Classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-gold-glow {
+  animation: goldGlow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, var(--df-gold) 0%, #ffd700 50%, var(--df-gold) 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Divine Fatherhood Design System */
+.df-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.df-section {
+  padding: 6rem 0;
+}
+
+.df-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(207, 175, 77, 0.1) 0%, rgba(10, 10, 10, 0.9) 50%, var(--df-bg) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Typography */
+.df-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.df-h1 {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  margin-bottom: 1.5rem;
+}
+
+.df-h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.df-h3 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.df-crown-glow {
+  background: linear-gradient(135deg, var(--df-gold) 0%, #ffd700 50%, var(--df-gold) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(207, 175, 77, 0.5);
+  animation: goldGlow 4s ease-in-out infinite;
+}
+
+.df-body {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.df-body-lg {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.df-emphasis {
+  font-weight: 700;
+  color: var(--df-gold);
+  letter-spacing: 0.05em;
+}
+
+/* Background Gradients */
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
+.bg-gradient-conic {
+  background: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
+}
+
+/* Custom Components */
+.df-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(207, 175, 77, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.df-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(207, 175, 77, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.df-button-gold {
+  background: linear-gradient(135deg, var(--df-gold) 0%, #ffd700 100%);
+  color: #000;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.df-button-gold:hover {
+  background: linear-gradient(135deg, #ffd700 0%, var(--df-gold) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(207, 175, 77, 0.4);
+}
+
+/* Epic Full-Screen Sections */
+.epic-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.epic-content {
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Progress Indicator */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--df-gold), #ffd700);
+  z-index: 1000;
+  transition: width 0.3s ease;
+}
+
+/* Navigation Dots */
+.nav-dots {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(207, 175, 77, 0.4);
+  background: transparent;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+  background: var(--df-gold);
+  border-color: var(--df-gold);
+  box-shadow: 0 0 20px rgba(207, 175, 77, 0.6);
+}
+
+.nav-dot:hover {
+  border-color: var(--df-gold);
+  scale: 1.2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .df-section {
+    padding: 3rem 0;
+  }
+  
+  .df-container {
+    padding: 0 1rem;
+  }
+  
+  .nav-dots {
+    right: 1rem;
   }
   
   .df-h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl mb-6;
-  }
-  
-  .df-h2 {
-    @apply text-3xl md:text-4xl mb-4;
-  }
-  
-  .df-h3 {
-    @apply text-2xl md:text-3xl mb-3;
-  }
-  
-  .df-body {
-    @apply text-base leading-relaxed mb-4;
-  }
-  
-  .df-body-lg {
-    @apply text-lg leading-relaxed mb-4;
-  }
-  
-  .df-emphasis {
-    @apply uppercase font-bold tracking-wider text-df-gold;
-  }
-  
-  .df-crown-glow {
-    @apply text-df-gold drop-shadow-lg;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-  }
-  
-  /* Layout Components */
-  .df-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-  
-  .df-section {
-    @apply py-16 md:py-20 lg:py-24;
-  }
-  
-  .df-section-sm {
-    @apply py-12 md:py-16;
-  }
-  
-  /* Button Variants */
-  .df-btn-gold-solid {
-    @apply bg-df-gold text-df-bg border-df-gold hover:bg-df-gold-1 hover:border-df-gold-1;
-  }
-  
-  .df-btn-gold-outline {
-    @apply bg-transparent text-df-gold border-df-gold hover:bg-df-gold hover:text-df-bg;
-  }
-  
-  .df-btn-ghost {
-    @apply bg-transparent text-df-white border-df-white hover:bg-df-white hover:text-df-bg;
-  }
-  
-  /* Card Component */
-  .df-card {
-    @apply bg-white/5 border border-df-gold/20 rounded-2xl p-8 backdrop-blur-sm transition-all duration-300 hover:border-df-gold hover:shadow-df-shadow-gold hover:-translate-y-1;
-  }
-  
-  /* Hero Component */
-  .df-hero {
-    @apply min-h-screen flex items-center relative overflow-hidden;
-    background: radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.1) 0%, var(--df-bg) 50%);
-  }
-  
-  .df-hero::before {
-    content: '';
-    @apply absolute -top-1/2 -left-1/2 w-[200%] h-[200%] pointer-events-none;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
-    animation: crown-glow 8s ease-in-out infinite alternate;
-  }
-  
-  /* Navigation */
-  .df-nav {
-    @apply fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-df-gold/20 z-50 py-4;
-  }
-  
-  /* Newsletter Form */
-  .df-newsletter {
-    @apply bg-df-gold/10 border-2 border-df-gold rounded-2xl p-12 text-center relative;
-  }
-  
-  /* Testimonial */
-  .df-testimonial {
-    @apply bg-df-gold/10 border-l-4 border-df-gold rounded-r-2xl p-8 relative;
-  }
-  
-  .df-testimonial::before {
-    content: '"';
-    @apply absolute -top-2 left-4 text-6xl text-df-gold leading-none;
-    font-family: Georgia, serif;
-  }
-  
-  /* Pricing Component */
-  .df-pricing {
-    @apply bg-white/5 border-2 border-df-gold rounded-2xl p-8 text-center relative overflow-hidden;
-  }
-  
-  .df-pricing::before {
-    content: '';
-    @apply absolute top-0 left-0 right-0 h-1;
-    background: linear-gradient(90deg, var(--df-gold) 0%, var(--df-gold-1) 100%);
+    font-size: clamp(2rem, 6vw, 4rem);
   }
 }
 
-@layer utilities {
-  /* Animation utilities */
-  .animate-crown-glow {
-    animation: crown-glow 8s ease-in-out infinite alternate;
+/* Scroll Animations */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
   
-  .animate-fade-in {
-    animation: fade-in 0.5s ease-out;
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Responsive utilities */
-  .aspect-video {
-    aspect-ratio: 16 / 9;
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
   }
-  
-  /* Accessibility utilities */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-  
-  @media (prefers-contrast: high) {
-    :root {
-      --df-gold: #FFFF00;
-    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .df-crown-glow {
+    text-shadow: none;
+    filter: contrast(2);
   }
 }
 
 /* Print styles */
 @media print {
-  .df-nav,
-  .df-btn,
-  .df-hero-badge {
-    @apply hidden;
-  }
-  
-  body {
-    @apply text-black bg-white;
-  }
-  
-  .df-hero-title,
-  .df-card-title,
-  .df-emphasis {
-    @apply text-black;
+  .nav-dots,
+  .progress-bar {
+    display: none;
   }
 }
