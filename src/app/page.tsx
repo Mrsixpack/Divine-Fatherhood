@@ -7,7 +7,7 @@ import {
   YouTubeGrid, 
   NewsletterForm,
   Testimonial,
-  PersonalStory
+  StoryJourney
 } from '@/components/divine-fatherhood'
 import { trackEvent } from '@/lib/utils'
 import { Crown } from 'lucide-react'
@@ -23,72 +23,37 @@ export default function HomePage() {
       {/* Hero Section - CROWNED WITH PURPOSE */}
       <Hero 
         title="CROWNED WITH PURPOSE"
-        subtitle="From Mr. Sixpack Empire to Divine Fatherhood. God didn't make me build an empire for myself - He was building me for HIS empire. Discover your divine calling through Faith • Fitness • Fatherhood."
+        subtitle="I thought I was building an empire for myself. God revealed I was being built for HIS empire. Now, with our second son coming in 2 months, the calling is crystal clear: help fathers discover they're not just raising kids - they're raising world-changers."
         ctaPrimary={{ 
-          text: "Discover Your Divine Calling", 
-          href: "/divine-calling",
+          text: "Start Your Divine Evolution", 
+          href: "#story",
           variant: "goldSolid"
         }}
         ctaSecondary={{ 
-          text: "Watch My Evolution Story", 
-          href: "https://youtube.com/@HANDLE",
+          text: "Watch My Story", 
+          href: "https://youtube.com/@divinefatherhood",
           variant: "goldOutline"
         }}
-        badge="Sammy 'MrSixPack' • Delaware • Expecting Father of 2"
+        badge="Sammy 'MrSixPack' Williams • Delaware • Father of 2 (Soon)"
       />
 
-      {/* Personal Story Section - Dynamic with Your Photos */}
-      <PersonalStory />
+      {/* Story Journey Section - Your Transformation Story */}
+      <StoryJourney />
 
-      {/* Framework Section */}
-      <section className="df-section">
+      {/* Core Message Section */}
+      <section className="df-section bg-white/5" id="story">
         <div className="df-container">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
             <Card 
               title="DADDY STRENGTH DIFFERENT"
-              copy="Faith as foundation. Fitness as discipline. Fatherhood as legacy. When fathers discover they're crowned with purpose, generations change."
+              copy="This isn't just physical strength. This is strength with PURPOSE. Strength to protect, provide, and lead by example. When you realize you're not just a father but a king raising future kings and queens, everything changes."
               icon="Crown"
             />
           </div>
         </div>
       </section>
 
-      {/* Evolution Story Section */}
-      <section className="df-section bg-white/5">
-        <div className="df-container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="df-heading df-h2 df-crown-glow mb-8">
-              The Divine Evolution
-            </h2>
-            <div className="space-y-8">
-              <div className="bg-df-bg/60 border border-df-gold/20 rounded-2xl p-8">
-                <h3 className="df-heading text-xl text-df-gold mb-4">Mr. Sixpack Empire</h3>
-                <p className="df-body text-df-white/80">
-                  "I was building an empire for myself. Focused on personal achievement, aesthetics, and individual success. 
-                  The grind was real, but something was missing."
-                </p>
-              </div>
-              
-              <div className="flex items-center justify-center">
-                <div className="h-px bg-df-gold w-16"></div>
-                <Crown className="h-8 w-8 text-df-gold mx-4" />
-                <div className="h-px bg-df-gold w-16"></div>
-              </div>
-              
-              <div className="bg-df-gold/10 border-2 border-df-gold rounded-2xl p-8">
-                <h3 className="df-heading text-xl text-df-gold mb-4">Divine Fatherhood</h3>
-                <p className="df-body text-df-white/90 mb-4">
-                  "Fatherhood changed everything. Especially with my second son coming in 2 months, God revealed: 
-                  I wasn't building an empire for myself - He was building me for HIS empire."
-                </p>
-                <p className="df-emphasis text-df-gold">
-                  "Purpose Over Pressure. Legacy Over Likes. Kingdom Over Empire."
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* YouTube Grid */}
       <YouTubeGrid 
@@ -101,41 +66,36 @@ export default function HomePage() {
         }}
       />
 
-      {/* Four Pillars Section */}
+      {/* The Divine Trinity Section */}
       <section className="df-section">
         <div className="df-container">
           <div className="text-center mb-16">
             <h2 className="df-heading df-h2 df-crown-glow mb-4">
-              The Four Pillars of Divine Fatherhood
+              The Divine Trinity
             </h2>
-            <p className="df-body text-df-white/80 max-w-2xl mx-auto">
-              Faith as foundation. Fitness as discipline. Fatherhood as legacy. Purpose as calling.
+            <p className="df-body text-df-white/80 max-w-3xl mx-auto">
+              Three foundations that transformed my life from chasing likes to building legacy. 
+              When these align, ordinary fathers become extraordinary kings.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card 
-              title="Faith Integration"
-              copy="Spiritual growth, divine purpose discovery, prayer as power. Foundation for everything else."
+              title="Faith Foundation"
+              copy="Prayer isn't just talking to God - it's receiving battle plans. Every morning I ask: 'What kind of king do my sons need me to be today?' The answer guides everything."
               icon="Heart"
             />
             
             <Card 
-              title="Fitness Foundation"
-              copy="Daddy strength different. Training for purpose, not ego. Physical discipline builds spiritual discipline."
+              title="Fitness Discipline"
+              copy="The gym isn't just for abs anymore. It's where I build the physical strength to carry my family and the mental toughness to lead them. Daddy strength hits different."
               icon="Dumbbell"
             />
             
             <Card 
-              title="Fatherhood Excellence"
-              copy="Legacy building, raising world-changers, intentional parenting. Your children are arrows shot into the future."
+              title="Fatherhood Legacy"
+              copy="I'm not raising kids - I'm raising future world-changers. Every decision I make today echoes in their tomorrow. That's the weight and honor of divine fatherhood."
               icon="Crown"
-            />
-            
-            <Card 
-              title="Purpose Discovery"
-              copy="Divine calling revealed through fatherhood. From empire building to kingdom building. Crowned with purpose."
-              icon="Compass"
             />
           </div>
         </div>
@@ -192,29 +152,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Transformation Testimonies */}
       <section className="df-section bg-white/5">
         <div className="df-container">
           <div className="text-center mb-12">
             <h2 className="df-heading df-h2 df-crown-glow mb-4">
-              Kingdom Testimonies
+              Fathers Finding Their Crown
             </h2>
             <p className="df-body text-df-white/80 mb-8 max-w-2xl mx-auto">
-              When fathers discover they're crowned with purpose, everything changes.
+              Real men. Real transformations. Real legacy being built one father at a time.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <Testimonial 
-              quote="I thought I was just getting stronger. Turns out God was building me for my divine calling. My children see the difference."
-              author="Darius K."
-              role="Father of 2 • Divine Fatherhood Circle"
+              quote="Sammy helped me realize I wasn't just working out - I was training for the most important role of my life. My daughter now sees a king, not just a dad who goes to the gym."
+              author="Carlos R."
+              role="Father of 1 • Following the Journey"
             />
             
             <Testimonial 
-              quote="DADDY STRENGTH DIFFERENT hit me deep. I'm not just raising kids - I'm raising world-changers. The legacy starts with me."
-              author="Marcus J."
-              role="Single Father • Purpose Discovery Graduate"
+              quote="'Daddy Strength Different' changed my whole perspective. I stopped chasing PRs and started building character. My boys are watching everything I do differently now."
+              author="Mike T."
+              role="Father of 2 • Divine Fatherhood Follower"
             />
           </div>
         </div>
@@ -222,9 +182,9 @@ export default function HomePage() {
 
       {/* Newsletter Form */}
       <NewsletterForm 
-        title="Ready to discover your divine calling?"
-        subtitle="Join 5,000+ fathers walking in purpose. Get the FREE 'Crowned Father' starter guide and weekly kingdom wisdom."
-        placeholder="Enter your email to get started"
+        title="Ready to walk in your divine purpose?"
+        subtitle="Join the movement of fathers discovering they're not just dads - they're kings raising world-changers. Get weekly wisdom, real talk, and the blueprint for building legacy."
+        placeholder="Enter your email to start your evolution"
         buttonText="Crown Me With Purpose"
       />
     </>
