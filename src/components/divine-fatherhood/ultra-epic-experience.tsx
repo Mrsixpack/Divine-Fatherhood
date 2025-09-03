@@ -232,14 +232,14 @@ export function UltraEpicExperience() {
       const windowHeight = window.innerHeight
       const newSection = Math.round(scrollY / windowHeight)
       
-      if (newSection !== currentSection && newSection >= 0 && newSection < sections.length) {
+      if (newSection !== currentSection && newSection >= 0 && newSection < 7) {
         setCurrentSection(newSection)
       }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [currentSection, isScrolling, sections.length])
+  }, [currentSection, isScrolling])
 
   if (!isLoaded) {
     return (
