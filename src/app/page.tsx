@@ -6,9 +6,9 @@ import {
   Card, 
   YouTubeGrid, 
   NewsletterForm,
-  Testimonial,
-  StoryJourney
+  Testimonial
 } from '@/components/divine-fatherhood'
+import { StoryJourney } from '@/components/divine-fatherhood/story-journey-simple'
 import { trackEvent } from '@/lib/utils'
 import { Crown } from 'lucide-react'
 
