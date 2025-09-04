@@ -336,12 +336,12 @@ export function UltraEpicExperience() {
           </div>
 
           {/* Content */}
-          <div className="relative z-20 w-full px-6 lg:px-12">
-            <div className="max-w-8xl mx-auto">
+          <div className="relative z-20 w-full px-8 lg:px-16">
+            <div className="max-w-7xl mx-auto">
               
-              {/* HERO SECTION - ABSOLUTELY INSANE */}
+              {/* HERO SECTION - SPACIOUS & PREMIUM */}
               {index === 0 && (
-                <div className="text-center space-y-12 animate-fade-in">
+                <div className="text-center space-y-24 animate-fade-in py-20">
                   {section.badge && (
                     <div className="premium-glass inline-flex items-center gap-4 text-df-gold px-12 py-6 font-semibold text-lg tracking-wide">
                       <div className="w-3 h-3 rounded-full bg-gradient-to-r from-df-gold to-yellow-400 animate-pulse"></div>
@@ -349,42 +349,50 @@ export function UltraEpicExperience() {
                     </div>
                   )}
                   
-                  <h1 className="premium-heading text-7xl md:text-[12rem] lg:text-[16rem] text-white mb-12 tracking-tighter leading-[0.8]">
-                    <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent" style={{animation: 'premiumGlow 4s ease-in-out infinite'}}>
-                      {section.title}
-                    </span>
-                  </h1>
-                  
-                  <div className="premium-heading text-3xl md:text-6xl lg:text-8xl text-df-gold/95 font-semibold mb-16 tracking-wide" style={{animation: 'premiumBreathe 6s ease-in-out infinite'}}>
-                    {section.subtitle}
+                  <div className="mb-20">
+                    <h1 className="premium-heading text-6xl md:text-8xl lg:text-9xl text-white tracking-tight leading-[0.9] mb-8">
+                      <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent" style={{animation: 'premiumGlow 4s ease-in-out infinite'}}>
+                        {section.title}
+                      </span>
+                    </h1>
                   </div>
                   
-                  <p className="premium-body text-2xl md:text-4xl lg:text-6xl text-df-white/95 max-w-8xl mx-auto leading-relaxed font-normal">
-                    {section.content}
-                  </p>
+                  <div className="mb-16">
+                    <div className="premium-heading text-2xl md:text-4xl lg:text-5xl text-df-gold/95 font-medium tracking-wide" style={{animation: 'premiumBreathe 6s ease-in-out infinite'}}>
+                      {section.subtitle}
+                    </div>
+                  </div>
+                  
+                  <div className="mb-20">
+                    <p className="premium-body text-xl md:text-2xl lg:text-3xl text-df-white/90 max-w-4xl mx-auto leading-relaxed font-light">
+                      {section.content}
+                    </p>
+                  </div>
                   
                   {/* Premium CTA Buttons */}
-                  <div className="flex flex-col lg:flex-row gap-12 justify-center items-center mt-24">
-                    <button
-                      onClick={nextSection}
-                      className="premium-button text-2xl px-20 py-8 font-semibold tracking-wide"
-                    >
-                      {section.cta}
-                    </button>
-                    
-                    <button className="premium-glass border border-df-gold/30 text-df-gold hover:border-df-gold/60 text-xl px-16 py-6 rounded-2xl font-medium tracking-wide transition-all duration-300 hover:scale-105">
-                      Watch Transformation
-                    </button>
+                  <div className="mb-32">
+                    <div className="flex flex-col lg:flex-row gap-8 justify-center items-center">
+                      <button
+                        onClick={nextSection}
+                        className="premium-button text-lg px-12 py-4 font-medium tracking-wide"
+                      >
+                        {section.cta}
+                      </button>
+                      
+                      <button className="premium-glass border border-df-gold/30 text-df-gold hover:border-df-gold/60 text-lg px-10 py-4 rounded-xl font-medium tracking-wide transition-all duration-300 hover:scale-105">
+                        Watch Transformation
+                      </button>
+                    </div>
                   </div>
 
-                  {/* Ultra Stats */}
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto">
+                  {/* Clean Stats */}
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto">
                     {section.stats?.map((stat, i) => (
                       <div key={i} className="text-center group cursor-pointer">
-                        <div className="bg-gradient-to-br from-df-gold/20 to-yellow-400/20 border border-df-gold/30 rounded-2xl p-6 backdrop-blur-xl hover:scale-110 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-df-gold/30">
-                          <stat.icon className="h-8 w-8 text-df-gold mx-auto mb-3 group-hover:animate-bounce" />
-                          <div className="text-4xl font-black text-df-gold mb-2 group-hover:text-yellow-300 transition-colors duration-300">{stat.number}</div>
-                          <div className="text-sm text-df-white/80 font-medium">{stat.label}</div>
+                        <div className="premium-card p-8 hover:scale-105 transition-all duration-300">
+                          <stat.icon className="h-6 w-6 text-df-gold mx-auto mb-6" />
+                          <div className="text-3xl font-bold text-df-gold mb-4">{stat.number}</div>
+                          <div className="text-base text-df-white/70 font-medium">{stat.label}</div>
                         </div>
                       </div>
                     ))}
@@ -392,10 +400,10 @@ export function UltraEpicExperience() {
                 </div>
               )}
 
-              {/* STORY SECTIONS - NEXT LEVEL */}
+              {/* STORY SECTIONS - CLEAN & SPACIOUS */}
               {index > 0 && (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                  <div className={`space-y-10 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center py-20">
+                  <div className={`space-y-16 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}>
                     {section.badge && (
                       <div className="premium-glass inline-flex items-center gap-4 text-emerald-400 px-12 py-6 font-medium text-xl tracking-wide">
                         <div className="w-3 h-3 rounded-full bg-gradient-to-r from-emerald-400 to-blue-400 animate-pulse"></div>
@@ -403,19 +411,21 @@ export function UltraEpicExperience() {
                       </div>
                     )}
                     
-                    <h2 className="premium-heading text-6xl md:text-8xl lg:text-[10rem] text-df-gold leading-[0.8] tracking-tighter mb-8" style={{animation: 'premiumGlow 3s ease-in-out infinite'}}>
-                      {section.title}
-                    </h2>
-                    
-                    {section.subtitle && (
-                      <h3 className="premium-heading text-3xl md:text-5xl lg:text-7xl text-df-white/95 font-medium tracking-wide mb-12">
-                        {section.subtitle}
-                      </h3>
-                    )}
-                    
-                    <p className="premium-body text-2xl md:text-3xl lg:text-5xl text-df-white/95 leading-relaxed font-light max-w-7xl">
-                      {section.content}
-                    </p>
+                    <div className="space-y-12">
+                      <h2 className="premium-heading text-4xl md:text-6xl lg:text-7xl text-df-gold leading-tight tracking-tight" style={{animation: 'premiumGlow 3s ease-in-out infinite'}}>
+                        {section.title}
+                      </h2>
+                      
+                      {section.subtitle && (
+                        <h3 className="premium-heading text-2xl md:text-3xl lg:text-4xl text-df-white/95 font-medium tracking-wide">
+                          {section.subtitle}
+                        </h3>
+                      )}
+                      
+                      <p className="premium-body text-lg md:text-xl lg:text-2xl text-df-white/90 leading-relaxed font-light max-w-2xl">
+                        {section.content}
+                      </p>
+                    </div>
 
                     {/* Enhanced Points */}
                     {section.points && (
@@ -471,16 +481,16 @@ export function UltraEpicExperience() {
 
                     {/* Enhanced Roles - DADDY STRENGTH DIFFERENT */}
                     {section.roles && (
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-24">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20">
                         {section.roles.map((role, i) => (
-                          <div key={i} className="premium-card text-center group cursor-pointer">
-                            <div className="premium-glass w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-12 group-hover:scale-110 transition-all duration-500">
-                              <role.icon className="h-16 w-16 text-df-gold" />
+                          <div key={i} className="premium-card text-center group cursor-pointer p-12">
+                            <div className="premium-glass w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
+                              <role.icon className="h-10 w-10 text-df-gold" />
                             </div>
-                            <h4 className="premium-heading text-df-gold text-4xl mb-6 tracking-wide">{role.title}</h4>
-                            <p className="premium-body text-df-white/90 text-2xl font-medium mb-6">{role.desc}</p>
-                            <p className="premium-body text-df-white/70 text-xl mb-8 leading-relaxed">{role.detail}</p>
-                            <div className="premium-glass text-df-gold font-medium text-lg tracking-wide px-8 py-4 inline-block">
+                            <h4 className="premium-heading text-df-gold text-2xl mb-4 tracking-wide">{role.title}</h4>
+                            <p className="premium-body text-df-white/90 text-lg font-medium mb-4">{role.desc}</p>
+                            <p className="premium-body text-df-white/70 text-base mb-6 leading-relaxed">{role.detail}</p>
+                            <div className="premium-glass text-df-gold font-medium text-sm tracking-wide px-6 py-3 inline-block">
                               {role.power}
                             </div>
                           </div>
