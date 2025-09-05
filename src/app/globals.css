@@ -389,9 +389,10 @@ body {
   box-shadow: 0 10px 30px rgba(207, 175, 77, 0.4);
 }
 
-/* Modern Spacious Sections */
+/* Modern Ultra-Spacious Sections */
 .premium-section {
   min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -399,21 +400,34 @@ body {
   overflow: hidden;
   scroll-snap-align: start;
   scroll-behavior: smooth;
-  padding: 80px 0;
+  padding: var(--space-3xl) 0;
+}
+
+.premium-section-compact {
+  min-height: 80vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  padding: var(--space-2xl) 0;
 }
 
 /* Modern Content Spacing */
 .section-content {
-  max-width: 1200px;
+  max-width: var(--content-lg);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--space-lg);
 }
 
-/* Generous Spacing System */
-.space-section { margin-bottom: 120px; }
-.space-large { margin-bottom: 80px; }
-.space-medium { margin-bottom: 48px; }
-.space-small { margin-bottom: 24px; }
+/* Generous Spacing System - Updated */
+.space-section { margin-bottom: var(--space-3xl); }
+.space-large { margin-bottom: var(--space-2xl); }
+.space-medium { margin-bottom: var(--space-xl); }
+.space-small { margin-bottom: var(--space-lg); }
+.space-tiny { margin-bottom: var(--space-md); }
 
 /* Apple-Style Smooth Scrolling */
 html {
@@ -421,13 +435,13 @@ html {
   scroll-snap-type: y mandatory;
 }
 
-/* Ultra-Sleek Typography */
+/* Modern Premium Typography System */
 .premium-heading {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   font-weight: 800;
   font-optical-sizing: auto;
-  letter-spacing: -0.08em;
-  line-height: 0.9;
+  letter-spacing: -0.06em;
+  line-height: 1.1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -438,73 +452,90 @@ html {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   font-weight: 400;
   font-optical-sizing: auto;
-  line-height: 1.5;
+  line-height: 1.6;
   letter-spacing: -0.01em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: var(--reading-width);
 }
 
 .ultra-sleek {
   font-family: "Inter", system-ui, sans-serif;
   font-weight: 900;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.08em;
   text-transform: uppercase;
-  line-height: 0.85;
+  line-height: 0.9;
+  font-optical-sizing: auto;
 }
 
 /* Premium Glass Effect */
 .premium-glass {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-glass:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
 /* Premium Button Styles */
 .premium-button {
   background: linear-gradient(135deg, #cfaf4d 0%, #ffd700 100%);
   border: none;
-  border-radius: 12px;
-  padding: 16px 32px;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  border-radius: 16px;
+  padding: var(--space-md) var(--space-lg);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--text-base);
   color: #000;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateZ(0);
   will-change: transform, box-shadow;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  min-height: 48px;
 }
 
 .premium-button:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(207, 175, 77, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(207, 175, 77, 0.4);
 }
 
 .premium-button:active {
-  transform: translateY(0) scale(0.98);
+  transform: translateY(-1px) scale(0.98);
 }
 
-/* Premium Card Styles - More Spacious */
+/* Premium Card Styles - Ultra Spacious */
 .premium-card {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(207, 175, 77, 0.15);
-  border-radius: 16px;
-  padding: 40px;
+  border-radius: 20px;
+  padding: var(--space-xl);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateZ(0);
   will-change: transform, box-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 .premium-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(207, 175, 77, 0.05);
-  border-color: rgba(207, 175, 77, 0.25);
-  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(207, 175, 77, 0.08);
+  border-color: rgba(207, 175, 77, 0.3);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .epic-content {
@@ -557,6 +588,100 @@ html {
   border-color: var(--df-gold);
   scale: 1.2;
 }
+
+/* Modern Spacing System - 8px Baseline Grid */
+:root {
+  --space-xs: clamp(8px, 1.5vw, 12px);
+  --space-sm: clamp(16px, 2.5vw, 24px);
+  --space-md: clamp(24px, 4vw, 40px);
+  --space-lg: clamp(32px, 6vw, 64px);
+  --space-xl: clamp(48px, 8vw, 96px);
+  --space-2xl: clamp(64px, 12vw, 160px);
+  --space-3xl: clamp(80px, 15vw, 200px);
+  
+  /* Modern Typography Scale */
+  --text-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 2vw, 1rem);
+  --text-base: clamp(1rem, 2.2vw, 1.2rem);
+  --text-lg: clamp(1.1rem, 2.5vw, 1.4rem);
+  --text-xl: clamp(1.25rem, 3vw, 1.75rem);
+  --text-2xl: clamp(1.5rem, 4vw, 2.5rem);
+  --text-3xl: clamp(2rem, 6vw, 4rem);
+  --text-4xl: clamp(2.5rem, 8vw, 5.5rem);
+  
+  /* Content Width Constraints */
+  --content-sm: min(600px, 90vw);
+  --content-md: min(800px, 90vw);
+  --content-lg: min(1200px, 90vw);
+  --content-xl: min(1400px, 90vw);
+  
+  /* Optimal Reading Line Length */
+  --reading-width: min(65ch, 90vw);
+}
+
+/* Ultra-Spacious Section Patterns */
+.section-hero {
+  padding: var(--space-3xl) var(--space-lg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-content {
+  padding: var(--space-2xl) var(--space-lg);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.section-compact {
+  padding: var(--space-xl) var(--space-lg);
+}
+
+/* Modern Typography Classes */
+.text-hero {
+  font-size: var(--text-4xl);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  font-weight: 900;
+}
+
+.text-display {
+  font-size: var(--text-3xl);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 800;
+}
+
+.text-heading {
+  font-size: var(--text-2xl);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.text-body-lg {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  max-width: var(--reading-width);
+}
+
+/* Spacing Utilities */
+.gap-generous { gap: var(--space-xl); }
+.gap-comfortable { gap: var(--space-lg); }
+.gap-cozy { gap: var(--space-md); }
+
+.mb-section { margin-bottom: var(--space-3xl); }
+.mb-block { margin-bottom: var(--space-xl); }
+.mb-element { margin-bottom: var(--space-lg); }
+.mb-item { margin-bottom: var(--space-md); }
 
 /* Responsive Design */
 @media (max-width: 768px) {

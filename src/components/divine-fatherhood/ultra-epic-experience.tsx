@@ -308,8 +308,12 @@ export function UltraEpicExperience() {
         <section
           key={section.id}
           id={section.id}
-          className="relative w-full h-screen flex items-center justify-center overflow-hidden"
-          style={{ scrollSnapAlign: 'start' }}
+          className="relative w-full flex items-center justify-center overflow-hidden"
+          style={{ 
+            scrollSnapAlign: 'start',
+            minHeight: '100vh',
+            height: 'auto'
+          }}
         >
           {/* Full-Page Immersive Background */}
           <div className="absolute inset-0 z-0 w-full h-full">
@@ -337,142 +341,263 @@ export function UltraEpicExperience() {
           </div>
 
           {/* Content */}
-          <div className="relative z-20 w-full px-8 lg:px-16">
-            <div className="max-w-7xl mx-auto">
+          <div className="relative z-20 w-full" style={{padding: '0 clamp(24px, 5vw, 80px)'}}>
+            <div style={{maxWidth: 'min(1400px, 90vw)', margin: '0 auto'}}>
               
-              {/* HERO SECTION - SPACIOUS & PREMIUM */}
+              {/* HERO SECTION - ULTRA SPACIOUS PREMIUM REDESIGN */}
               {index === 0 && (
-                <div className="text-center space-y-24 animate-fade-in py-20">
+                <div className="text-center animate-fade-in" style={{paddingTop: 'clamp(80px, 12vh, 160px)', paddingBottom: 'clamp(80px, 12vh, 160px)'}}>
+                  
+                  {/* Badge with generous top spacing */}
                   {section.badge && (
-                    <div className="premium-glass inline-flex items-center gap-4 text-df-gold px-12 py-6 font-semibold text-lg tracking-wide">
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-df-gold to-yellow-400 animate-pulse"></div>
-                      <span className="premium-body">{section.badge}</span>
+                    <div className="mb-20 lg:mb-32">
+                      <div className="premium-glass inline-flex items-center gap-4 text-df-gold font-medium tracking-wide" 
+                           style={{padding: 'clamp(16px, 3vw, 24px) clamp(32px, 6vw, 48px)', fontSize: 'clamp(14px, 2.5vw, 18px)'}}>
+                        <div className="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-gradient-to-r from-df-gold to-yellow-400 animate-pulse"></div>
+                        <span className="premium-body">{section.badge}</span>
+                      </div>
                     </div>
                   )}
                   
-                  <div className="mb-20">
-                    <h1 className="ultra-sleek text-7xl md:text-9xl lg:text-[12rem] text-white mb-8">
-                      <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent" style={{animation: 'premiumGlow 4s ease-in-out infinite'}}>
-                        {section.title}
+                  {/* Main Title - Properly Sized & Responsive */}
+                  <div className="mb-16 lg:mb-24">
+                    <h1 className="ultra-sleek text-white leading-none" 
+                        style={{
+                          fontSize: 'clamp(2.5rem, 8vw, 5.5rem)',
+                          letterSpacing: '-0.08em',
+                          lineHeight: '0.9',
+                          marginBottom: 'clamp(32px, 5vh, 64px)'
+                        }}>
+                      <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent" 
+                            style={{animation: 'premiumGlow 4s ease-in-out infinite'}}>
+                        CROWNED
+                      </span>
+                      <br />
+                      <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent" 
+                            style={{animation: 'premiumGlow 4s ease-in-out infinite'}}>
+                        WITH PURPOSE
                       </span>
                     </h1>
                   </div>
                   
-                  <div className="mb-16">
-                    <div className="premium-heading text-3xl md:text-5xl lg:text-6xl text-df-gold/95 font-semibold tracking-tight" style={{animation: 'premiumBreathe 6s ease-in-out infinite'}}>
+                  {/* Subtitle with breathing room */}
+                  <div className="mb-16 lg:mb-24">
+                    <div className="premium-heading text-df-gold/95 font-medium tracking-tight" 
+                         style={{
+                           fontSize: 'clamp(1.25rem, 4vw, 2.5rem)',
+                           animation: 'premiumBreathe 6s ease-in-out infinite',
+                           lineHeight: '1.3'
+                         }}>
                       {section.subtitle}
                     </div>
                   </div>
                   
-                  <div className="mb-20">
-                    <p className="premium-body text-xl md:text-2xl lg:text-3xl text-df-white/90 max-w-4xl mx-auto leading-relaxed font-light">
+                  {/* Content with proper line length */}
+                  <div className="mb-16 lg:mb-24">
+                    <p className="premium-body text-df-white/90 mx-auto leading-relaxed font-light" 
+                       style={{
+                         fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
+                         maxWidth: '65ch',
+                         lineHeight: '1.6'
+                       }}>
                       {section.content}
                     </p>
                   </div>
                   
-                  {/* Premium CTA Buttons */}
-                  <div className="mb-32">
-                    <div className="flex flex-col lg:flex-row gap-8 justify-center items-center">
+                  {/* CTA Buttons with generous spacing */}
+                  <div className="mb-24 lg:mb-32">
+                    <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 justify-center items-center">
                       <button
                         onClick={nextSection}
-                        className="premium-button text-lg px-12 py-4 font-medium tracking-wide"
+                        className="premium-button font-medium tracking-wide"
+                        style={{
+                          padding: 'clamp(16px, 3vw, 20px) clamp(32px, 6vw, 48px)',
+                          fontSize: 'clamp(14px, 2.5vw, 18px)'
+                        }}
                       >
                         {section.cta}
                       </button>
                       
-                      <button className="premium-glass border border-df-gold/30 text-df-gold hover:border-df-gold/60 text-lg px-10 py-4 rounded-xl font-medium tracking-wide transition-all duration-300 hover:scale-105">
+                      <button className="premium-glass border border-df-gold/30 text-df-gold hover:border-df-gold/60 font-medium tracking-wide transition-all duration-300 hover:scale-105 rounded-xl"
+                              style={{
+                                padding: 'clamp(16px, 3vw, 20px) clamp(28px, 5vw, 40px)',
+                                fontSize: 'clamp(14px, 2.5vw, 18px)'
+                              }}>
                         Watch Transformation
                       </button>
                     </div>
                   </div>
 
-                  {/* Clean Stats */}
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto">
-                    {section.stats?.map((stat, i) => (
-                      <div key={i} className="text-center group cursor-pointer">
-                        <div className="premium-card p-8 hover:scale-105 transition-all duration-300">
-                          <stat.icon className="h-6 w-6 text-df-gold mx-auto mb-6" />
-                          <div className="text-3xl font-bold text-df-gold mb-4">{stat.number}</div>
-                          <div className="text-base text-df-white/70 font-medium">{stat.label}</div>
+                  {/* Stats with modern spacing */}
+                  <div className="max-w-5xl mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                      {section.stats?.map((stat, i) => (
+                        <div key={i} className="text-center group cursor-pointer">
+                          <div className="premium-card hover:scale-105 transition-all duration-300" 
+                               style={{
+                                 padding: 'clamp(24px, 4vw, 40px)',
+                                 borderRadius: '16px'
+                               }}>
+                            <stat.icon className="h-5 w-5 lg:h-6 lg:w-6 text-df-gold mx-auto" 
+                                       style={{marginBottom: 'clamp(16px, 3vw, 24px)'}} />
+                            <div className="text-df-gold font-bold" 
+                                 style={{
+                                   fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                                   marginBottom: 'clamp(8px, 2vw, 16px)'
+                                 }}>{stat.number}</div>
+                            <div className="text-df-white/70 font-medium" 
+                                 style={{fontSize: 'clamp(0.875rem, 2vw, 1rem)'}}>{stat.label}</div>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
 
-              {/* STORY SECTIONS - CLEAN & SPACIOUS */}
+              {/* STORY SECTIONS - ULTRA SPACIOUS REDESIGN */}
               {index > 0 && (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center py-20">
-                  <div className={`space-y-16 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 items-center" 
+                     style={{
+                       gap: 'clamp(48px, 8vw, 120px)',
+                       paddingTop: 'clamp(80px, 12vh, 160px)',
+                       paddingBottom: 'clamp(80px, 12vh, 160px)'
+                     }}>
+                  
+                  <div className={`${index % 2 === 0 ? 'order-2' : 'order-1'}`} 
+                       style={{display: 'flex', flexDirection: 'column', gap: 'clamp(32px, 6vw, 64px)'}}>
+                    
+                    {/* Badge with proper spacing */}
                     {section.badge && (
-                      <div className="premium-glass inline-flex items-center gap-4 text-emerald-400 px-12 py-6 font-medium text-xl tracking-wide">
-                        <div className="w-3 h-3 rounded-full bg-gradient-to-r from-emerald-400 to-blue-400 animate-pulse"></div>
-                        <span className="premium-body">{section.badge}</span>
+                      <div>
+                        <div className="premium-glass inline-flex items-center gap-4 text-emerald-400 font-medium tracking-wide" 
+                             style={{
+                               padding: 'clamp(16px, 3vw, 24px) clamp(32px, 6vw, 48px)',
+                               fontSize: 'clamp(14px, 2.5vw, 18px)'
+                             }}>
+                          <div className="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-gradient-to-r from-emerald-400 to-blue-400 animate-pulse"></div>
+                          <span className="premium-body">{section.badge}</span>
+                        </div>
                       </div>
                     )}
                     
-                    <div className="space-y-12">
-                      <h2 className="ultra-sleek text-5xl md:text-7xl lg:text-8xl text-df-gold" style={{animation: 'premiumGlow 3s ease-in-out infinite'}}>
+                    {/* Content with proper hierarchy */}
+                    <div style={{display: 'flex', flexDirection: 'column', gap: 'clamp(24px, 5vw, 48px)'}}>
+                      <h2 className="ultra-sleek text-df-gold leading-none" 
+                          style={{
+                            fontSize: 'clamp(2rem, 6vw, 4rem)',
+                            animation: 'premiumGlow 3s ease-in-out infinite',
+                            letterSpacing: '-0.06em',
+                            lineHeight: '0.95'
+                          }}>
                         {section.title}
                       </h2>
                       
                       {section.subtitle && (
-                        <h3 className="premium-heading text-2xl md:text-4xl lg:text-5xl text-df-white/95 font-medium tracking-tight">
+                        <h3 className="premium-heading text-df-white/95 font-medium tracking-tight" 
+                            style={{
+                              fontSize: 'clamp(1.25rem, 3.5vw, 2rem)',
+                              lineHeight: '1.3'
+                            }}>
                           {section.subtitle}
                         </h3>
                       )}
                       
-                      <p className="premium-body text-xl md:text-2xl lg:text-3xl text-df-white/90 leading-relaxed font-light max-w-3xl">
+                      <p className="premium-body text-df-white/90 leading-relaxed font-light" 
+                         style={{
+                           fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
+                           lineHeight: '1.6',
+                           maxWidth: '60ch'
+                         }}>
                         {section.content}
                       </p>
                     </div>
 
-                    {/* Enhanced Points */}
+                    {/* Enhanced Points with generous spacing */}
                     {section.points && (
-                      <div className="space-y-6">
+                      <div style={{display: 'flex', flexDirection: 'column', gap: 'clamp(16px, 3vw, 24px)'}}>
                         {section.points.map((point, i) => (
                           <div key={i} className="group cursor-pointer">
-                            <div className={`flex items-center gap-4 bg-gradient-to-r ${point.color} bg-opacity-20 border border-df-gold/30 rounded-2xl p-6 backdrop-blur-xl hover:scale-105 transition-all duration-500 shadow-xl hover:shadow-2xl`}>
-                              <point.icon className="h-8 w-8 text-df-gold flex-shrink-0 group-hover:animate-spin" />
-                              <span className="text-df-gold font-black text-xl">{point.text}</span>
+                            <div className={`flex items-center bg-gradient-to-r ${point.color} bg-opacity-20 border border-df-gold/30 backdrop-blur-xl hover:scale-105 transition-all duration-500 shadow-xl hover:shadow-2xl`}
+                                 style={{
+                                   gap: 'clamp(12px, 2.5vw, 20px)',
+                                   padding: 'clamp(20px, 4vw, 32px)',
+                                   borderRadius: '16px'
+                                 }}>
+                              <point.icon className="text-df-gold flex-shrink-0 group-hover:animate-spin" 
+                                          style={{width: 'clamp(20px, 4vw, 32px)', height: 'clamp(20px, 4vw, 32px)'}} />
+                              <span className="text-df-gold font-black" 
+                                    style={{fontSize: 'clamp(1rem, 2.5vw, 1.25rem)'}}>{point.text}</span>
                             </div>
                           </div>
                         ))}
                       </div>
                     )}
 
-                    {/* Quote */}
+                    {/* Quote with modern spacing */}
                     {section.quote && (
-                      <blockquote className="text-2xl md:text-3xl italic text-df-gold/95 font-bold border-l-4 border-df-gold pl-6 bg-gradient-to-r from-df-gold/10 to-transparent p-6 rounded-r-2xl">
+                      <blockquote className="italic text-df-gold/95 font-bold border-l-4 border-df-gold bg-gradient-to-r from-df-gold/10 to-transparent rounded-r-2xl" 
+                                  style={{
+                                    fontSize: 'clamp(1.1rem, 2.8vw, 1.5rem)',
+                                    lineHeight: '1.4',
+                                    padding: 'clamp(20px, 4vw, 32px)',
+                                    paddingLeft: 'clamp(24px, 5vw, 40px)'
+                                  }}>
                         {section.quote}
                       </blockquote>
                     )}
 
-                    {/* Enhanced Pillars, Values, Trinity, etc. */}
+                    {/* Enhanced Pillars with modern spacing */}
                     {section.pillars && (
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-3" style={{gap: 'clamp(20px, 4vw, 32px)'}}>
                         {section.pillars.map((pillar, i) => (
-                          <div key={i} className={`text-center ${pillar.color} rounded-2xl p-8 backdrop-blur-xl border border-white/20 hover:scale-110 transition-all duration-500 shadow-2xl cursor-pointer group`}>
-                            <div className="text-3xl font-black text-white mb-3 group-hover:animate-pulse">{pillar.icon}</div>
-                            <div className="text-white font-bold text-lg mb-2">{pillar.label}</div>
-                            <div className="text-white/80 text-sm">{pillar.desc}</div>
+                          <div key={i} className={`text-center ${pillar.color} backdrop-blur-xl border border-white/20 hover:scale-110 transition-all duration-500 shadow-2xl cursor-pointer group`} 
+                               style={{
+                                 borderRadius: '16px',
+                                 padding: 'clamp(24px, 5vw, 40px)'
+                               }}>
+                            <div className="text-white font-black group-hover:animate-pulse" 
+                                 style={{
+                                   fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                                   marginBottom: 'clamp(12px, 2.5vw, 20px)'
+                                 }}>{pillar.icon}</div>
+                            <div className="text-white font-bold" 
+                                 style={{
+                                   fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
+                                   marginBottom: 'clamp(8px, 1.5vw, 12px)'
+                                 }}>{pillar.label}</div>
+                            <div className="text-white/80" 
+                                 style={{fontSize: 'clamp(0.875rem, 2vw, 1rem)'}}>{pillar.desc}</div>
                           </div>
                         ))}
                       </div>
                     )}
 
-                    {/* Enhanced Values */}
+                    {/* Enhanced Values with generous spacing */}
                     {section.values && (
-                      <div className="space-y-6">
+                      <div style={{display: 'flex', flexDirection: 'column', gap: 'clamp(20px, 4vw, 32px)'}}>
                         {section.values.map((value, i) => (
-                          <div key={i} className="bg-gradient-to-r from-df-gold/10 to-yellow-400/10 border border-df-gold/30 rounded-2xl p-8 backdrop-blur-xl hover:scale-105 transition-all duration-500 shadow-xl group cursor-pointer">
-                            <div className="flex items-start gap-6">
-                              <value.icon className="h-10 w-10 text-df-gold flex-shrink-0 group-hover:animate-bounce" />
-                              <div className="flex-1">
-                                <h4 className="text-df-gold font-black text-xl mb-2">{value.label}</h4>
-                                <p className="text-df-white/90 text-lg mb-3">{value.desc}</p>
-                                <div className="text-df-gold/80 font-bold">{value.metric}</div>
+                          <div key={i} className="bg-gradient-to-r from-df-gold/10 to-yellow-400/10 border border-df-gold/30 backdrop-blur-xl hover:scale-105 transition-all duration-500 shadow-xl group cursor-pointer" 
+                               style={{
+                                 borderRadius: '16px',
+                                 padding: 'clamp(24px, 5vw, 40px)'
+                               }}>
+                            <div className="flex items-start" style={{gap: 'clamp(16px, 3vw, 24px)'}}>
+                              <value.icon className="text-df-gold flex-shrink-0 group-hover:animate-bounce" 
+                                          style={{
+                                            width: 'clamp(24px, 5vw, 40px)',
+                                            height: 'clamp(24px, 5vw, 40px)'
+                                          }} />
+                              <div className="flex-1" style={{display: 'flex', flexDirection: 'column', gap: 'clamp(8px, 2vw, 16px)'}}>
+                                <h4 className="text-df-gold font-black" 
+                                    style={{fontSize: 'clamp(1.1rem, 2.8vw, 1.4rem)'}}>{value.label}</h4>
+                                <p className="text-df-white/90" 
+                                   style={{
+                                     fontSize: 'clamp(1rem, 2.2vw, 1.2rem)',
+                                     lineHeight: '1.5'
+                                   }}>{value.desc}</p>
+                                <div className="text-df-gold/80 font-bold" 
+                                     style={{fontSize: 'clamp(0.9rem, 2vw, 1.1rem)'}}>{value.metric}</div>
                               </div>
                             </div>
                           </div>
@@ -480,18 +605,49 @@ export function UltraEpicExperience() {
                       </div>
                     )}
 
-                    {/* Enhanced Roles - DADDY STRENGTH DIFFERENT */}
+                    {/* Enhanced Roles with ultra-spacious design */}
                     {section.roles && (
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20">
+                      <div className="grid grid-cols-1 md:grid-cols-3" 
+                           style={{
+                             gap: 'clamp(32px, 6vw, 60px)',
+                             marginTop: 'clamp(48px, 8vw, 80px)'
+                           }}>
                         {section.roles.map((role, i) => (
-                          <div key={i} className="premium-card text-center group cursor-pointer p-12">
-                            <div className="premium-glass w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
-                              <role.icon className="h-10 w-10 text-df-gold" />
+                          <div key={i} className="premium-card text-center group cursor-pointer" 
+                               style={{
+                                 padding: 'clamp(32px, 6vw, 48px)',
+                                 display: 'flex',
+                                 flexDirection: 'column',
+                                 gap: 'clamp(16px, 3vw, 24px)'
+                               }}>
+                            <div className="premium-glass rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-all duration-300" 
+                                 style={{
+                                   width: 'clamp(60px, 12vw, 80px)',
+                                   height: 'clamp(60px, 12vw, 80px)'
+                                 }}>
+                              <role.icon className="text-df-gold" 
+                                         style={{
+                                           width: 'clamp(24px, 5vw, 40px)',
+                                           height: 'clamp(24px, 5vw, 40px)'
+                                         }} />
                             </div>
-                            <h4 className="premium-heading text-df-gold text-2xl mb-4 tracking-wide">{role.title}</h4>
-                            <p className="premium-body text-df-white/90 text-lg font-medium mb-4">{role.desc}</p>
-                            <p className="premium-body text-df-white/70 text-base mb-6 leading-relaxed">{role.detail}</p>
-                            <div className="premium-glass text-df-gold font-medium text-sm tracking-wide px-6 py-3 inline-block">
+                            <h4 className="premium-heading text-df-gold tracking-wide" 
+                                style={{fontSize: 'clamp(1.2rem, 3vw, 1.8rem)'}}>{role.title}</h4>
+                            <p className="premium-body text-df-white/90 font-medium" 
+                               style={{
+                                 fontSize: 'clamp(1rem, 2.2vw, 1.2rem)',
+                                 lineHeight: '1.4'
+                               }}>{role.desc}</p>
+                            <p className="premium-body text-df-white/70 leading-relaxed" 
+                               style={{
+                                 fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
+                                 lineHeight: '1.5'
+                               }}>{role.detail}</p>
+                            <div className="premium-glass text-df-gold font-medium tracking-wide inline-block" 
+                                 style={{
+                                   fontSize: 'clamp(0.8rem, 1.8vw, 1rem)',
+                                   padding: 'clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px)'
+                                 }}>
                               {role.power}
                             </div>
                           </div>
@@ -499,31 +655,47 @@ export function UltraEpicExperience() {
                       </div>
                     )}
 
-                    {/* Final CTA */}
+                    {/* Final CTA with generous spacing */}
                     {section.finalCta && (
-                      <div className="text-center mt-16">
-                        <div className="mb-8">
-                          <p className="text-2xl md:text-3xl text-df-white/95 font-bold italic mb-6">
+                      <div className="text-center" style={{marginTop: 'clamp(48px, 8vw, 80px)'}}>
+                        <div style={{marginBottom: 'clamp(32px, 6vw, 48px)'}}>
+                          <p className="text-df-white/95 font-bold italic" 
+                             style={{
+                               fontSize: 'clamp(1.2rem, 3vw, 1.8rem)',
+                               lineHeight: '1.4',
+                               maxWidth: '60ch',
+                               margin: '0 auto'
+                             }}>
                             {section.finalMessage}
                           </p>
                         </div>
                         <Button 
                           size="xl" 
-                          className="bg-gradient-to-r from-df-gold via-yellow-400 to-df-gold text-black hover:from-yellow-400 hover:to-df-gold text-3xl px-20 py-10 rounded-3xl font-black shadow-2xl shadow-df-gold/50 transform hover:scale-125 transition-all duration-500 border-4 border-yellow-400/50"
+                          className="bg-gradient-to-r from-df-gold via-yellow-400 to-df-gold text-black hover:from-yellow-400 hover:to-df-gold font-black shadow-2xl shadow-df-gold/50 transform hover:scale-110 transition-all duration-500 border-4 border-yellow-400/50" 
+                          style={{
+                            fontSize: 'clamp(1.1rem, 2.8vw, 1.8rem)',
+                            padding: 'clamp(16px, 4vw, 24px) clamp(32px, 8vw, 60px)',
+                            borderRadius: '20px',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: 'clamp(12px, 2.5vw, 16px)'
+                          }}
                         >
-                          <Crown className="h-10 w-10 mr-4" />
+                          <Crown className="flex-shrink-0" style={{width: 'clamp(20px, 4vw, 32px)', height: 'clamp(20px, 4vw, 32px)'}} />
                           CROWN ME WITH PURPOSE
-                          <Flame className="h-10 w-10 ml-4" />
+                          <Flame className="flex-shrink-0" style={{width: 'clamp(20px, 4vw, 32px)', height: 'clamp(20px, 4vw, 32px)'}} />
                         </Button>
                       </div>
                     )}
                   </div>
 
-                  {/* Immersive Image Side */}
+                  {/* Immersive Image Side with proper proportions */}
                   <div className={`${index % 2 === 0 ? 'order-1' : 'order-2'} relative`}>
-                    <div className="relative group h-[80vh] w-full">
-                      <div className="absolute inset-0 bg-gradient-to-br from-df-gold/30 to-yellow-400/30 rounded-2xl blur-2xl scale-105 group-hover:scale-110 transition-all duration-500"></div>
-                      <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-df-gold/40 border border-df-gold/30 transform group-hover:scale-[1.02] transition-all duration-500 h-full">
+                    <div className="relative group w-full" style={{height: 'clamp(400px, 60vh, 700px)'}}>
+                      <div className="absolute inset-0 bg-gradient-to-br from-df-gold/30 to-yellow-400/30 blur-2xl scale-105 group-hover:scale-110 transition-all duration-500" 
+                           style={{borderRadius: '20px'}}></div>
+                      <div className="relative overflow-hidden shadow-2xl shadow-df-gold/40 border border-df-gold/30 transform group-hover:scale-[1.02] transition-all duration-500 h-full" 
+                           style={{borderRadius: '20px'}}>
                         <Image
                           src={section.image}
                           alt={section.title}
@@ -542,15 +714,28 @@ export function UltraEpicExperience() {
             </div>
           </div>
 
-          {/* Next Section Ultra Indicator */}
+          {/* Next Section Indicator with proper spacing */}
           {index < sections.length - 1 && (
             <button
               onClick={nextSection}
-              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 text-df-gold/80 hover:text-df-gold transition-all duration-500 animate-bounce group"
+              className="absolute left-1/2 transform -translate-x-1/2 z-30 text-df-gold/80 hover:text-df-gold transition-all duration-500 animate-bounce group"
+              style={{bottom: 'clamp(32px, 5vh, 64px)'}}
             >
-              <div className="text-center bg-black/50 backdrop-blur-xl border border-df-gold/30 rounded-2xl px-6 py-4 hover:bg-df-gold/10 transition-all duration-300">
-                <div className="text-sm mb-2 font-bold uppercase tracking-wider group-hover:text-yellow-300">CONTINUE EPIC STORY</div>
-                <ChevronDown className="h-10 w-10 mx-auto group-hover:animate-pulse" />
+              <div className="text-center bg-black/50 backdrop-blur-xl border border-df-gold/30 hover:bg-df-gold/10 transition-all duration-300" 
+                   style={{
+                     borderRadius: '16px',
+                     padding: 'clamp(16px, 3vw, 24px) clamp(20px, 4vw, 32px)'
+                   }}>
+                <div className="font-bold uppercase tracking-wider group-hover:text-yellow-300" 
+                     style={{
+                       fontSize: 'clamp(0.75rem, 1.8vw, 0.875rem)',
+                       marginBottom: 'clamp(8px, 1.5vw, 12px)'
+                     }}>CONTINUE EPIC STORY</div>
+                <ChevronDown className="mx-auto group-hover:animate-pulse" 
+                             style={{
+                               width: 'clamp(24px, 5vw, 40px)',
+                               height: 'clamp(24px, 5vw, 40px)'
+                             }} />
               </div>
             </button>
           )}
