@@ -308,24 +308,25 @@ export function UltraEpicExperience() {
         <section
           key={section.id}
           id={section.id}
-          className="relative min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative w-full h-screen flex items-center justify-center overflow-hidden"
           style={{ scrollSnapAlign: 'start' }}
         >
-          {/* Ultra Dynamic Background */}
-          <div className="absolute inset-0 z-0">
+          {/* Full-Page Immersive Background */}
+          <div className="absolute inset-0 z-0 w-full h-full">
             <Image
               src={section.image}
               alt={section.title}
               fill
-              className="object-cover object-center transition-transform duration-700"
+              className="object-cover object-center w-full h-full transition-transform duration-700"
               style={{
-                transform: `scale(${1 + Math.abs(mousePosition.x) * 0.05}) translate(${mousePosition.x * 10}px, ${mousePosition.y * 5}px)`
+                transform: `scale(${1.1 + Math.abs(mousePosition.x) * 0.03}) translate(${mousePosition.x * 8}px, ${mousePosition.y * 4}px)`
               }}
               priority={index === 0}
               quality={100}
+              sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/60 to-black/95"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-transparent to-black/90"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
             {/* Animated overlay */}
             <div 
               className="absolute inset-0 bg-gradient-radial from-df-gold/10 via-transparent to-transparent transition-opacity duration-1000"
@@ -350,7 +351,7 @@ export function UltraEpicExperience() {
                   )}
                   
                   <div className="mb-20">
-                    <h1 className="premium-heading text-6xl md:text-8xl lg:text-9xl text-white tracking-tight leading-[0.9] mb-8">
+                    <h1 className="ultra-sleek text-7xl md:text-9xl lg:text-[12rem] text-white mb-8">
                       <span className="bg-gradient-to-r from-df-gold via-yellow-300 to-df-gold bg-clip-text text-transparent" style={{animation: 'premiumGlow 4s ease-in-out infinite'}}>
                         {section.title}
                       </span>
@@ -358,7 +359,7 @@ export function UltraEpicExperience() {
                   </div>
                   
                   <div className="mb-16">
-                    <div className="premium-heading text-2xl md:text-4xl lg:text-5xl text-df-gold/95 font-medium tracking-wide" style={{animation: 'premiumBreathe 6s ease-in-out infinite'}}>
+                    <div className="premium-heading text-3xl md:text-5xl lg:text-6xl text-df-gold/95 font-semibold tracking-tight" style={{animation: 'premiumBreathe 6s ease-in-out infinite'}}>
                       {section.subtitle}
                     </div>
                   </div>
@@ -412,17 +413,17 @@ export function UltraEpicExperience() {
                     )}
                     
                     <div className="space-y-12">
-                      <h2 className="premium-heading text-4xl md:text-6xl lg:text-7xl text-df-gold leading-tight tracking-tight" style={{animation: 'premiumGlow 3s ease-in-out infinite'}}>
+                      <h2 className="ultra-sleek text-5xl md:text-7xl lg:text-8xl text-df-gold" style={{animation: 'premiumGlow 3s ease-in-out infinite'}}>
                         {section.title}
                       </h2>
                       
                       {section.subtitle && (
-                        <h3 className="premium-heading text-2xl md:text-3xl lg:text-4xl text-df-white/95 font-medium tracking-wide">
+                        <h3 className="premium-heading text-2xl md:text-4xl lg:text-5xl text-df-white/95 font-medium tracking-tight">
                           {section.subtitle}
                         </h3>
                       )}
                       
-                      <p className="premium-body text-lg md:text-xl lg:text-2xl text-df-white/90 leading-relaxed font-light max-w-2xl">
+                      <p className="premium-body text-xl md:text-2xl lg:text-3xl text-df-white/90 leading-relaxed font-light max-w-3xl">
                         {section.content}
                       </p>
                     </div>
@@ -518,21 +519,21 @@ export function UltraEpicExperience() {
                     )}
                   </div>
 
-                  {/* Enhanced Image Side */}
-                  <div className={`${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
-                    <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-br from-df-gold/40 to-yellow-400/40 rounded-3xl blur-3xl scale-110 group-hover:scale-125 transition-all duration-700"></div>
-                      <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-df-gold/60 border-4 border-df-gold/40 transform group-hover:scale-105 transition-all duration-700 backdrop-blur-sm">
+                  {/* Immersive Image Side */}
+                  <div className={`${index % 2 === 0 ? 'order-1' : 'order-2'} relative`}>
+                    <div className="relative group h-[80vh] w-full">
+                      <div className="absolute inset-0 bg-gradient-to-br from-df-gold/30 to-yellow-400/30 rounded-2xl blur-2xl scale-105 group-hover:scale-110 transition-all duration-500"></div>
+                      <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-df-gold/40 border border-df-gold/30 transform group-hover:scale-[1.02] transition-all duration-500 h-full">
                         <Image
                           src={section.image}
                           alt={section.title}
-                          width={900}
-                          height={700}
-                          className="w-full h-[600px] object-cover"
+                          fill
+                          className="object-cover object-center"
                           quality={100}
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-df-gold/10 via-transparent to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-df-gold/5 via-transparent to-transparent"></div>
                       </div>
                     </div>
                   </div>
