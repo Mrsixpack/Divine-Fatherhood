@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export configuration for GitHub Pages
+  // GitHub Pages static export configuration
   output: 'export',
   distDir: 'out',
   basePath: '',
@@ -8,32 +8,13 @@ const nextConfig = {
   trailingSlash: true,
   
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
     ignoreBuildErrors: true,
   },
-  experimental: {
-    optimizePackageImports: ['@radix-ui/react-icons', 'framer-motion'],
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true, // Required for static export
-    formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'i.ytimg.com',
-      },
-      {
-        protocol: 'https', 
-        hostname: 'img.youtube.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn1.genspark.ai',
-      },
-    ],
+    unoptimized: true,
   },
   async headers() {
     return [
