@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Crown, Play, ArrowRight, CheckCircle } from 'lucide-react'
+import { Crown, Play, ArrowRight, CheckCircle, Star } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
-export default function MinimalLuxuryHomepage() {
+export default function PremiumVisualHomepage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [currentSection, setCurrentSection] = useState(0)
 
@@ -66,32 +67,44 @@ export default function MinimalLuxuryHomepage() {
         </div>
       </nav>
 
-      {/* Hero Section - Ultra Clean */}
+      {/* Hero Section - With Glowing Crown Background */}
       <section 
         data-section
         className="relative min-h-screen flex items-center justify-center"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(212, 175, 55, 0.1) 0%, black 70%)`
+          background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(212, 175, 55, 0.15) 0%, black 70%)`
         }}
       >
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-8">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="w-full h-full bg-cover bg-center opacity-30"
+            style={{
+              backgroundImage: `url('https://page.gensparksite.com/v1/base64_upload/d5e93a103d57cdc6dcafd6650a060f24')`
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <Crown className="w-16 h-16 text-gold-400 mx-auto mb-8" />
-            <h1 className="text-6xl md:text-8xl font-light tracking-wider mb-8">
-              CROWNED
-              <br />
-              <span className="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent font-extralight">
-                WITH PURPOSE
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-2xl mx-auto mb-12">
+            {/* Divine Fatherhood Logo */}
+            <div className="mb-12">
+              <img 
+                src="https://page.gensparksite.com/v1/base64_upload/a20a906b9b22ff96dcfa6d1ad49c05ac"
+                alt="Divine Fatherhood - Crowned with Purpose"
+                className="w-full max-w-3xl mx-auto h-auto"
+              />
+            </div>
+            
+            <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed max-w-3xl mx-auto mb-12">
               Transform from building an empire to establishing a kingdom. 
               Your children deserve to see a king, not just a father.
             </p>
+            
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.3)" }}
               whileTap={{ scale: 0.95 }}
@@ -111,14 +124,29 @@ export default function MinimalLuxuryHomepage() {
         </div>
       </section>
 
-      {/* Story Section - Minimal Storytelling */}
+      {/* Transformation Story Section */}
       <section 
         id="story"
         data-section
         className="py-32 px-8 bg-gradient-to-b from-black to-gray-900/50"
       >
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Evolution Visual */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <img 
+              src="https://page.gensparksite.com/v1/base64_upload/05f9ad47d10c5daf77806165d1674d98"
+              alt="Evolution from Empire to Kingdom"
+              className="w-full max-w-4xl mx-auto h-auto rounded-2xl"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -126,17 +154,16 @@ export default function MinimalLuxuryHomepage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-light mb-8">
-                FROM EMPIRE TO
+                GOD REVEALED MY
                 <br />
-                <span className="text-gold-400">KINGDOM</span>
+                <span className="text-gold-400">TRUE CALLING</span>
               </h2>
               <p className="text-lg text-white/80 font-light leading-relaxed mb-8">
                 I built an empire focused on myself. Six-pack abs, business success, external validation. 
                 But when I became a father, I realized my children didn't need to see an emperor—they needed to see a king.
               </p>
               <p className="text-lg text-white/80 font-light leading-relaxed mb-8">
-                A king builds for legacy. A king serves his kingdom. A king understands his divine purpose 
-                extends beyond his own achievements to the generations he influences.
+                "I wasn't building an empire for myself. God was building me for HIS empire."
               </p>
               <div className="flex items-center space-x-4 text-gold-400">
                 <CheckCircle className="w-5 h-5" />
@@ -151,17 +178,73 @@ export default function MinimalLuxuryHomepage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-gold-400/10 to-gold-600/5 backdrop-blur-xl border border-gold-500/20 rounded-2xl p-8 aspect-square flex items-center justify-center">
-                <div className="text-center">
-                  <Crown className="w-24 h-24 text-gold-400 mx-auto mb-6" />
-                  <div className="text-2xl font-light text-white/90">
-                    "THE REAL REASON<br />FATHERHOOD<br />CHANGED EVERYTHING"
-                  </div>
-                  <button className="mt-6 text-gold-400 hover:text-gold-300 transition-colors inline-flex items-center space-x-2">
-                    <Play className="w-4 h-4" />
-                    <span className="text-sm font-light">WATCH STORY</span>
-                  </button>
-                </div>
+              {/* Divine Calling Visual */}
+              <img 
+                src="https://page.gensparksite.com/v1/base64_upload/27d5595eeb861404e3999bebae1308fd"
+                alt="God Revealed My True Calling"
+                className="w-full h-auto rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl" />
+              <button className="absolute bottom-6 left-6 text-gold-400 hover:text-gold-300 transition-colors inline-flex items-center space-x-2">
+                <Play className="w-6 h-6" />
+                <span className="text-lg font-light">WATCH MY STORY</span>
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Three Stage Journey */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <h3 className="text-3xl font-light text-center mb-12 text-gold-400">THE TRANSFORMATION JOURNEY</h3>
+            <img 
+              src="https://page.gensparksite.com/v1/base64_upload/9e2da55aee07e21758a1a730f2714c55"
+              alt="The Struggle, The Awakening, The Kingdom"
+              className="w-full max-w-5xl mx-auto h-auto rounded-2xl"
+            />
+          </motion.div>
+
+          {/* Father & Child Moments */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative rounded-2xl overflow-hidden"
+            >
+              <img 
+                src="https://page.gensparksite.com/v1/base64_upload/80b3f63c999bc53e62569a37f153b524"
+                alt="Father and Child in Prayer"
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-6 left-6">
+                <h4 className="text-xl font-light text-white mb-2">SPIRITUAL FOUNDATION</h4>
+                <p className="text-white/80 text-sm">Building faith together</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative rounded-2xl overflow-hidden"
+            >
+              <img 
+                src="https://page.gensparksite.com/v1/base64_upload/d593130642048a63eb02521b75e7c926"
+                alt="Father and Child Exercising"
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-6 left-6">
+                <h4 className="text-xl font-light text-white mb-2">FITNESS BONDING</h4>
+                <p className="text-white/80 text-sm">Strength through connection</p>
               </div>
             </motion.div>
           </div>
@@ -276,7 +359,7 @@ export default function MinimalLuxuryHomepage() {
         </div>
       </section>
 
-      {/* Legacy Section - Minimal Testimonials */}
+      {/* Legacy Section - Testimonials with Professional Image */}
       <section 
         id="legacy"
         data-section
@@ -303,17 +386,17 @@ export default function MinimalLuxuryHomepage() {
               {
                 quote: "My daughter now sees a king, not just a dad who goes to the gym.",
                 author: "Marcus Johnson",
-                role: "Father of 2"
+                role: "Father of 2, Detroit"
               },
               {
-                quote: "I found accountability partners who understand godly fatherhood.",
+                quote: "I found accountability partners who understand godly fatherhood in today's world.",
                 author: "James Rodriguez", 
-                role: "Father of 3"
+                role: "Father of 3, Atlanta"
               },
               {
-                quote: "From building empire to building kingdom. Best investment ever.",
+                quote: "From building empire to building kingdom. Best investment I've ever made.",
                 author: "David Thompson",
-                role: "Father of 1"
+                role: "Father of 1, Chicago"
               }
             ].map((testimonial, index) => (
               <motion.div
@@ -324,39 +407,88 @@ export default function MinimalLuxuryHomepage() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl border border-white/10 rounded-2xl p-8"
               >
-                <div className="text-gold-400 mb-4">"</div>
+                <div className="flex items-center mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-gold-400 fill-current" />
+                  ))}
+                </div>
+                <div className="text-gold-400 mb-4 text-2xl">"</div>
                 <p className="text-white/80 font-light leading-relaxed mb-6 text-lg">
                   {testimonial.quote}
                 </p>
-                <div>
-                  <div className="font-medium text-white">{testimonial.author}</div>
-                  <div className="text-white/60 text-sm">{testimonial.role}</div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-gold-400/20 to-gold-600/10 rounded-full flex items-center justify-center">
+                    <Crown className="w-6 h-6 text-gold-400" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-white">{testimonial.author}</div>
+                    <div className="text-white/60 text-sm">{testimonial.role}</div>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Featured Success Story */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mt-20 bg-gradient-to-r from-gold-400/10 to-gold-600/5 backdrop-blur-xl border border-gold-500/20 rounded-2xl p-8 text-center"
+          >
+            <img 
+              src="https://page.gensparksite.com/v1/base64_upload/901ddc3d58a6472d87a657763ab2facd"
+              alt="Success Story"
+              className="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-2 border-gold-400/30"
+            />
+            <blockquote className="text-xl text-white/90 font-light leading-relaxed mb-4 max-w-3xl mx-auto">
+              "Joining Divine Fatherhood was the turning point in my life. I went from chasing success for myself 
+              to building a legacy for my children. My wife sees a different man, my kids see their hero."
+            </blockquote>
+            <div className="text-gold-400 font-medium">- Antonio Williams, Father of 3</div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Minimal CTA Footer */}
+      {/* Final CTA with Brand Visual */}
       <section className="py-20 px-8 bg-black">
         <div className="max-w-4xl mx-auto text-center">
-          <Crown className="w-16 h-16 text-gold-400 mx-auto mb-8" />
-          <h2 className="text-3xl md:text-4xl font-light mb-6">
-            READY TO BE <span className="text-gold-400">CROWNED?</span>
-          </h2>
-          <p className="text-lg text-white/70 font-light mb-8 max-w-2xl mx-auto">
-            Join the movement of fathers discovering their divine purpose and building kingdoms, not empires.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-12 py-4 rounded-full text-lg tracking-wide"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            START YOUR JOURNEY
-          </motion.button>
+            <img 
+              src="https://page.gensparksite.com/v1/base64_upload/968341fb0d47976b1991f78e87418745"
+              alt="Discover Your Divine Purpose - Divine Fatherhood"
+              className="w-full max-w-4xl mx-auto h-auto mb-8"
+            />
+            <p className="text-lg text-white/70 font-light mb-8 max-w-2xl mx-auto">
+              Join 10,000+ fathers discovering their divine purpose and building kingdoms, not empires.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-12 py-4 rounded-full text-lg tracking-wide"
+            >
+              START YOUR TRANSFORMATION
+            </motion.button>
+          </motion.div>
         </div>
       </section>
+
+      {/* Premium Footer */}
+      <footer className="bg-black border-t border-gold-500/20">
+        <div className="max-w-6xl mx-auto px-8 py-12">
+          <img 
+            src="https://page.gensparksite.com/v1/base64_upload/72d9659e89fef8f66a856718c6ca97f8"
+            alt="Divine Fatherhood Footer"
+            className="w-full max-w-4xl mx-auto h-auto"
+          />
+        </div>
+      </footer>
     </div>
   )
 }
