@@ -1,50 +1,64 @@
 {
   "name": "divine-fatherhood",
   "version": "1.0.0",
-  "description": "Divine Fatherhood - Crowned with Purpose. Faith, Fitness, Fatherhood.",
+  "description": "Divine Fatherhood - Crowned with Purpose. Ultra-spacious website for MrSixPack Empire.",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "deploy": "vercel --prod",
+    "deploy-dev": "vercel"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.7.0",
-    "@radix-ui/react-slot": "^1.2.3",
+    "@hookform/resolvers": "^3.3.4",
+    "@next/third-parties": "^14.2.5",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.12",
-    "lucide-react": "^0.408.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "lucide-react": "^0.400.0",
     "next": "14.2.5",
-    "pm2": "^6.0.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^18",
+    "react-dom": "^18",
     "react-hook-form": "^7.52.1",
-    "tailwind-merge": "^2.4.0",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^20.14.11",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/eslint": "^8.56.10",
     "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.5",
     "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.6",
-    "typescript": "^5.5.3"
+    "tailwindcss": "^3.4.4",
+    "vercel": "^37.6.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mrsixpack/Divine-Fatherhood"
   },
   "keywords": [
     "divine-fatherhood",
-    "faith",
+    "mrsixpack",
     "fitness",
     "fatherhood",
-    "coaching",
-    "youtube",
-    "next.js"
+    "nextjs",
+    "vercel",
+    "ultra-spacious-design"
   ],
   "author": "MrSixPack",
   "license": "MIT"

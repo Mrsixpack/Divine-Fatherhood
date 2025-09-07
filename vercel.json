@@ -1,31 +1,16 @@
 {
-  "build": {
-    "env": {
-      "NEXT_BUILD": "1"
-    }
-  },
-  "outputDirectory": "out",
   "framework": "nextjs",
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "/$1/",
-      "permanent": false
+  "outputDirectory": "out",
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "devCommand": "npm run dev",
+  "public": false,
+  "github": {
+    "silent": true
+  },
+  "functions": {
+    "src/pages/api/*.ts": {
+      "runtime": "nodejs18.x"
     }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        }
-      ]
-    }
-  ]
+  }
 }
