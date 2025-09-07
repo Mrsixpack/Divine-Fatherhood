@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.mrsixpackempire.com
+
+# Sitemaps
+Sitemap: https://www.mrsixpackempire.com/sitemap.xml
