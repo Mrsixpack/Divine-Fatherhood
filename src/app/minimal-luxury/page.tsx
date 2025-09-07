@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Crown, Play, ArrowRight, CheckCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function MinimalLuxuryHomepage() {
+export default function MinimalLuxuryPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [currentSection, setCurrentSection] = useState(0)
 

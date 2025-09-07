@@ -27,6 +27,18 @@ const config = {
           "gold-2": "#DAA520",
           white: "#FFFFFF"
         },
+        gold: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#d4af37',
+          500: '#b8860b',
+          600: '#a0750b',
+          700: '#85640a',
+          800: '#6b5009',
+          900: '#4a3607',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
