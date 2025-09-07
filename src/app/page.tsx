@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Crown, Play, ArrowRight, CheckCircle, Star } from 'lucide-react'
+import { Crown, Play, ArrowRight, CheckCircle, Star, Instagram, Youtube, Twitter } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 import Image from 'next/image'
 
 export default function PremiumVisualHomepage() {
@@ -57,13 +58,15 @@ export default function PremiumVisualHomepage() {
             <a href="#purpose" className="hover:text-gold-400 transition-colors">PURPOSE</a>
             <a href="#legacy" className="hover:text-gold-400 transition-colors">LEGACY</a>
           </div>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-6 py-2 rounded-full text-sm tracking-wide"
-          >
-            BEGIN JOURNEY
-          </motion.button>
+          <Link href="/playbook">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-6 py-2 rounded-full text-sm tracking-wide"
+            >
+              BEGIN JOURNEY
+            </motion.button>
+          </Link>
         </div>
       </nav>
 
@@ -105,14 +108,16 @@ export default function PremiumVisualHomepage() {
               Your children deserve to see a king, not just a father.
             </p>
             
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="group bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-12 py-4 rounded-full text-lg tracking-wide inline-flex items-center space-x-3"
-            >
-              <span>DISCOVER YOUR CALLING</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            <Link href="/playbook">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                className="group bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-12 py-4 rounded-full text-lg tracking-wide inline-flex items-center space-x-3"
+              >
+                <span>DISCOVER YOUR CALLING</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
 
@@ -289,13 +294,15 @@ export default function PremiumVisualHomepage() {
                   Digital foundation for discovering divine purpose through fitness, faith, and fatherhood.
                 </p>
                 <div className="text-3xl font-light text-gold-400 mb-6">$47</div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-transparent border border-gold-400/50 text-gold-400 hover:bg-gold-400 hover:text-black font-medium py-3 rounded-full transition-all duration-300"
-                >
-                  BEGIN HERE
-                </motion.button>
+                <Link href="/playbook">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-transparent border border-gold-400/50 text-gold-400 hover:bg-gold-400 hover:text-black font-medium py-3 rounded-full transition-all duration-300"
+                  >
+                    BEGIN HERE
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
 
@@ -317,13 +324,15 @@ export default function PremiumVisualHomepage() {
                   Brotherhood community with weekly calls, accountability, and spiritual growth.
                 </p>
                 <div className="text-3xl font-light text-gold-400 mb-6">$97<span className="text-base text-white/50">/month</span></div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-gold-400/20 border border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-black font-medium py-3 rounded-full transition-all duration-300"
-                >
-                  JOIN BROTHERHOOD
-                </motion.button>
+                <Link href="/circle">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-gold-400/20 border border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-black font-medium py-3 rounded-full transition-all duration-300"
+                  >
+                    JOIN BROTHERHOOD
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
 
@@ -346,13 +355,15 @@ export default function PremiumVisualHomepage() {
                   30-day transformation with Sammy. Discover calling, build legacy blueprint.
                 </p>
                 <div className="text-3xl font-light text-gold-400 mb-6">$997</div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium py-3 rounded-full transition-all duration-300"
-                >
-                  APPLY NOW
-                </motion.button>
+                <Link href="/intensive">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium py-3 rounded-full transition-all duration-300"
+                  >
+                    APPLY NOW
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -468,13 +479,15 @@ export default function PremiumVisualHomepage() {
             <p className="text-lg text-white/70 font-light mb-8 max-w-2xl mx-auto">
               Join 10,000+ fathers discovering their divine purpose and building kingdoms, not empires.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-12 py-4 rounded-full text-lg tracking-wide"
-            >
-              START YOUR TRANSFORMATION
-            </motion.button>
+            <Link href="/playbook">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-12 py-4 rounded-full text-lg tracking-wide"
+              >
+                START YOUR TRANSFORMATION
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -485,8 +498,44 @@ export default function PremiumVisualHomepage() {
           <img 
             src="https://page.gensparksite.com/v1/base64_upload/72d9659e89fef8f66a856718c6ca97f8"
             alt="Divine Fatherhood Footer"
-            className="w-full max-w-4xl mx-auto h-auto"
+            className="w-full max-w-4xl mx-auto h-auto mb-8"
           />
+          
+          {/* Social Media Links */}
+          <div className="flex justify-center items-center space-x-8 mb-8">
+            <a 
+              href="https://instagram.com/mrsixpackempire" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3 text-gold-400 hover:text-gold-300 transition-colors group"
+            >
+              <Instagram className="w-6 h-6" />
+              <span className="font-light">Follow @mrsixpackempire</span>
+            </a>
+            <a 
+              href="https://youtube.com/@divinefatherhood" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3 text-gold-400 hover:text-gold-300 transition-colors"
+            >
+              <Youtube className="w-6 h-6" />
+              <span className="font-light">YouTube</span>
+            </a>
+            <a 
+              href="https://twitter.com/mrsixpackempire" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3 text-gold-400 hover:text-gold-300 transition-colors"
+            >
+              <Twitter className="w-6 h-6" />
+              <span className="font-light">Twitter</span>
+            </a>
+          </div>
+          
+          {/* Copyright */}
+          <div className="text-center text-white/60 text-sm">
+            © 2025 Divine Fatherhood. All Rights Reserved. | Building Stronger Fathers, Shaping Better Futures
+          </div>
         </div>
       </footer>
     </div>
