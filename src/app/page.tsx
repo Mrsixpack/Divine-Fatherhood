@@ -170,9 +170,21 @@ export default function PremiumVisualHomepage() {
               <p className="text-lg text-white/80 font-light leading-relaxed mb-8">
                 "I wasn't building an empire for myself. God was building me for HIS empire."
               </p>
-              <div className="flex items-center space-x-4 text-gold-400">
+              <div className="flex items-center space-x-4 text-gold-400 mb-8">
                 <CheckCircle className="w-5 h-5" />
                 <span className="font-light">Sammy, MrSixPack Empire Founder</span>
+              </div>
+              
+              {/* Sammy's Gym Photo */}
+              <div className="mt-8">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/21e7e3a133f51b5e47c7f22da7db38c2"
+                  alt="Sammy in the gym - Building physical and spiritual strength"
+                  className="w-full max-w-md rounded-2xl shadow-2xl border border-gold-400/20"
+                />
+                <p className="text-sm text-white/60 text-center mt-3 italic">
+                  "Physical strength builds character. Spiritual strength builds kings."
+                </p>
               </div>
             </motion.div>
             
@@ -211,6 +223,43 @@ export default function PremiumVisualHomepage() {
               alt="The Struggle, The Awakening, The Kingdom"
               className="w-full max-w-5xl mx-auto h-auto rounded-2xl"
             />
+          </motion.div>
+
+          {/* Meet Sammy Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-20 bg-gradient-to-r from-gold-400/5 to-transparent rounded-2xl p-8"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl font-light mb-6 text-gold-400">MEET YOUR GUIDE</h3>
+                <p className="text-lg text-white/80 font-light leading-relaxed mb-6">
+                  I'm Sammy, and I've walked this exact journey. From building the MrSixPack Empire focused on 
+                  personal achievement to discovering my divine calling as a father and kingdom builder.
+                </p>
+                <p className="text-lg text-white/80 font-light leading-relaxed mb-6">
+                  My transformation wasn't just physical - it was spiritual, emotional, and purposeful. 
+                  Now I help fathers like you discover that same divine calling and build legacies that matter.
+                </p>
+                <div className="flex items-center space-x-4 text-gold-400">
+                  <Crown className="w-6 h-6" />
+                  <span>Father. Coach. Kingdom Builder.</span>
+                </div>
+              </div>
+              <div className="relative">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/21e7e3a133f51b5e47c7f22da7db38c2"
+                  alt="Sammy - Your Divine Fatherhood Guide"
+                  className="w-full rounded-2xl shadow-2xl"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-gold-400 to-gold-600 text-black px-6 py-3 rounded-full font-medium">
+                  Ready to Guide You
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           {/* Father & Child Moments */}
@@ -440,7 +489,7 @@ export default function PremiumVisualHomepage() {
             ))}
           </div>
 
-          {/* Featured Success Story */}
+          {/* Featured Success Story with Sammy */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -449,15 +498,17 @@ export default function PremiumVisualHomepage() {
             className="mt-20 bg-gradient-to-r from-gold-400/10 to-gold-600/5 backdrop-blur-xl border border-gold-500/20 rounded-2xl p-8 text-center"
           >
             <img 
-              src="https://page.gensparksite.com/v1/base64_upload/901ddc3d58a6472d87a657763ab2facd"
-              alt="Success Story"
-              className="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-2 border-gold-400/30"
+              src="https://page.gensparksite.com/v1/base64_upload/e1ba558eed59955723e463e1b6fca0f3"
+              alt="Sammy - Divine Fatherhood Founder"
+              className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-gold-400/50"
             />
             <blockquote className="text-xl text-white/90 font-light leading-relaxed mb-4 max-w-3xl mx-auto">
-              "Joining Divine Fatherhood was the turning point in my life. I went from chasing success for myself 
-              to building a legacy for my children. My wife sees a different man, my kids see their hero."
+              "I wasn't building an empire for myself - God was building me for HIS empire. 
+              When I realized my children needed to see a king, not just a dad who goes to the gym, everything changed.
+              This transformation is what I want to share with every father ready to be crowned with purpose."
             </blockquote>
-            <div className="text-gold-400 font-medium">- Antonio Williams, Father of 3</div>
+            <div className="text-gold-400 font-medium">- Sammy, Founder of Divine Fatherhood</div>
+            <div className="text-white/60 text-sm mt-2">MrSixPack Empire → Divine Fatherhood</div>
           </motion.div>
         </div>
       </section>
