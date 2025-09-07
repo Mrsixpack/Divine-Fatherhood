@@ -1,12 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // GitHub Pages static export configuration
-  output: 'export',
-  distDir: 'out',
-  basePath: '',
-  assetPrefix: '',
-  trailingSlash: true,
-  
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -14,7 +7,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['page.gensparksite.com'],
+    unoptimized: false,
   },
   async headers() {
     return [
