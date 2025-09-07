@@ -1,7 +1,7 @@
 {
   "name": "divine-fatherhood",
-  "version": "1.0.0",
-  "description": "Divine Fatherhood - Crowned with Purpose. Ultra-spacious website for MrSixPack Empire.",
+  "version": "1.0.1",
+  "description": "Divine Fatherhood - Crowned with Purpose. Ultra-spacious website for MrSixPack Empire. Netlify Cache Refresh v1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
