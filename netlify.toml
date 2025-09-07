@@ -5,17 +5,14 @@
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
+  NETLIFY_USE_CACHE = "false"
+  CI = "true"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [build.processing]
   skip_processing = false
-
-# Force dependency installation
-[build.environment]
-  NETLIFY_USE_CACHE = "false"
-  CI = "true"
 
 # Custom headers for static assets
 [[headers]]
