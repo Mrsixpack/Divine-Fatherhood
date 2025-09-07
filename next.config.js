@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Static export configuration for GitHub Pages
+  output: 'export',
+  distDir: 'out',
+  basePath: '',
+  assetPrefix: '',
+  trailingSlash: true,
+  
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -11,6 +18,7 @@ const nextConfig = {
     optimizePackageImports: ['@radix-ui/react-icons', 'framer-motion'],
   },
   images: {
+    unoptimized: true, // Required for static export
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
