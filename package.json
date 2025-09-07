@@ -9,8 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "vercel --prod",
-    "deploy-dev": "vercel",
-    "postbuild": "next-sitemap"
+    "deploy-dev": "vercel"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
