@@ -130,20 +130,20 @@ export default function PremiumVisualHomepage() {
           <div className="bg-gradient-to-r from-white/5 to-transparent backdrop-blur-xl border border-white/10 rounded-2xl p-6">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-2xl font-bold text-gold-400 mb-1">10,247</div>
-                <div className="text-sm text-white/70">Fathers Transformed</div>
+                <div className="text-2xl font-bold text-gold-400 mb-1">8,247</div>
+                <div className="text-sm text-white/70">Fathers Equipped</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-gold-400 mb-1">4.9★</div>
                 <div className="text-sm text-white/70">Average Rating</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-gold-400 mb-1">14 Days</div>
-                <div className="text-sm text-white/70">To Find Purpose</div>
+                <div className="text-2xl font-bold text-gold-400 mb-1">20 Min</div>
+                <div className="text-sm text-white/70">Daily Training</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-gold-400 mb-1">100%</div>
-                <div className="text-sm text-white/70">Free Challenge</div>
+                <div className="text-sm text-white/70">Free System</div>
               </div>
             </div>
           </div>
@@ -571,7 +571,7 @@ export default function PremiumVisualHomepage() {
               READY TO START YOUR <span className="text-gold-400">TRANSFORMATION?</span>
             </h3>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              Join thousands of fathers who've discovered their divine purpose through our proven 14-day challenge.
+              Join thousands of fathers who've built strength in body and spirit with the 20-Minute Command Corner system.
             </p>
           </motion.div>
           <ChallengeOptin variant="hero" className="max-w-3xl mx-auto" />

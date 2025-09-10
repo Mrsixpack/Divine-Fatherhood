@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Crown, Download, Clock, Users, Shield, CheckCircle, Star, ArrowRight, Gift } from 'lucide-react'
+import { Crown, Download, Clock, Users, Shield, CheckCircle, Star, ArrowRight, Gift, Target, Zap, BookOpen, Calendar } from 'lucide-react'
 
 interface ChallengeOptinProps {
   variant?: 'hero' | 'inline' | 'sidebar'
@@ -30,14 +30,14 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
       <div className={`bg-gradient-to-br from-gold-400/20 to-gold-600/10 backdrop-blur-xl border border-gold-500/30 rounded-3xl p-8 ${className}`}>
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <Gift className="w-8 h-8 text-gold-400" />
-            <span className="text-gold-400 font-medium text-lg">FREE 14-DAY CHALLENGE</span>
+            <Target className="w-8 h-8 text-gold-400" />
+            <span className="text-gold-400 font-medium text-lg">FREE COMMAND CORNER GUIDE</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-light mb-4">
-            FROM EMPIRE TO <span className="text-gold-400">KINGDOM</span>
+            THE 20‑MINUTE <span className="text-gold-400">COMMAND CORNER</span>
           </h2>
           <p className="text-lg text-white/80 font-light max-w-2xl mx-auto">
-            Transform your fatherhood in 14 days. Join 10,000+ dads discovering their divine purpose.
+            Build physical strength and spiritual discipline in just 20 minutes. The complete faith-based fitness system for busy fathers.
           </p>
         </div>
 
@@ -51,18 +51,55 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
               className="space-y-6"
             >
               {/* Value Stack */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="flex items-center space-x-3 text-sm">
-                  <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0" />
-                  <span className="text-white/90">14-Day Purpose Discovery</span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm">
-                  <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0" />
-                  <span className="text-white/90">Daily Kingdom Builder Tasks</span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm">
-                  <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0" />
-                  <span className="text-white/90">Private Father Community</span>
+              <div className="bg-gradient-to-r from-white/5 to-gold-500/10 rounded-2xl p-6 mb-6">
+                <h3 className="text-xl font-light text-gold-300 mb-4 text-center">Your Complete Command Corner System ($197 Value)</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3 text-sm">
+                      <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-white/90 font-medium block">20-Minute Full Body Workouts</span>
+                        <span className="text-white/60 text-xs">Progressive 4-week training program</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3 text-sm">
+                      <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-white/90 font-medium block">Faith-Based Nutrition Plan</span>
+                        <span className="text-white/60 text-xs">Honor your body as God's temple</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3 text-sm">
+                      <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-white/90 font-medium block">Daily Habit Tracker</span>
+                        <span className="text-white/60 text-xs">Build discipline & spiritual strength</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3 text-sm">
+                      <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-white/90 font-medium block">Scripture & Reflection Guide</span>
+                        <span className="text-white/60 text-xs">Connect fitness with faith daily</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3 text-sm">
+                      <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-white/90 font-medium block">Printable Workout Cards</span>
+                        <span className="text-white/60 text-xs">Take your training anywhere</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3 text-sm">
+                      <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-white/90 font-medium block">Father's Strength Journal</span>
+                        <span className="text-white/60 text-xs">Track progress & victories</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -72,7 +109,7 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email to start today..."
+                  placeholder="Enter your email for instant access..."
                   required
                   className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white placeholder-white/60 focus:outline-none focus:border-gold-400/50 transition-all"
                 />
@@ -88,7 +125,7 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
                   ) : (
                     <>
                       <Download className="w-5 h-5" />
-                      <span>START CHALLENGE</span>
+                      <span>GET COMMAND CORNER</span>
                     </>
                   )}
                 </motion.button>
@@ -98,11 +135,11 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
               <div className="flex items-center justify-between text-sm text-white/70">
                 <div className="flex items-center space-x-2">
                   <Users className="w-4 h-4" />
-                  <span>10,247 fathers joined this week</span>
+                  <span>8,247 fathers downloaded this week</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Clock className="w-4 h-4" />
-                  <span>Challenge starts today</span>
+                  <Zap className="w-4 h-4" />
+                  <span>Instant digital download</span>
                 </div>
               </div>
 
@@ -122,14 +159,14 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-light text-gold-400 mb-4">Welcome to the Kingdom!</h3>
+              <h3 className="text-2xl font-light text-gold-400 mb-4">Your Command Corner Awaits!</h3>
               <p className="text-white/80 mb-6">
-                Check your email for Day 1 of your transformation challenge. 
-                Your journey to divine fatherhood begins now.
+                Check your email for your complete Command Corner system. 
+                Your 20-minute transformation journey starts now.
               </p>
               <div className="bg-gradient-to-r from-white/10 to-transparent p-4 rounded-xl">
                 <p className="text-sm text-white/70">
-                  💡 <strong>Pro Tip:</strong> Add our emails to your contacts so you don't miss any kingdom-building content!
+                  💪 <strong>Get Started:</strong> Print your workout cards and set up your Command Corner space today!
                 </p>
               </div>
             </motion.div>
@@ -143,12 +180,12 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
   return (
     <div className={`bg-gradient-to-r from-gold-400/10 to-gold-600/5 backdrop-blur-xl border border-gold-500/20 rounded-2xl p-6 ${className}`}>
       <div className="flex items-center space-x-3 mb-4">
-        <Crown className="w-6 h-6 text-gold-400" />
-        <h3 className="text-xl font-light">Join the 14-Day Challenge</h3>
+        <Target className="w-6 h-6 text-gold-400" />
+        <h3 className="text-xl font-light">Get Command Corner Guide</h3>
       </div>
       
       <p className="text-white/80 mb-4">
-        Transform from empire builder to kingdom builder in just 14 days.
+        20-minute faith-based fitness system. Build strength in body and spirit.
       </p>
 
       {!isSubmitted ? (
@@ -167,7 +204,7 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
             whileTap={{ scale: 0.98 }}
             className="w-full bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium py-3 rounded-full flex items-center justify-center space-x-2"
           >
-            <span>Start Free Challenge</span>
+            <span>Get Free Guide</span>
             <ArrowRight className="w-4 h-4" />
           </motion.button>
         </form>
@@ -185,7 +222,7 @@ export default function ChallengeOptin({ variant = 'inline', className = '' }: C
         </div>
         <div className="flex items-center space-x-1">
           <Users className="w-3 h-3" />
-          <span>10K+ members</span>
+          <span>8K+ downloads</span>
         </div>
       </div>
     </div>
