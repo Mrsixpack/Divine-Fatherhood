@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Crown, Play, ArrowRight, CheckCircle, Star, Instagram, Youtube, Twitter } from 'lucide-react'
+import { Crown, Play, ArrowRight, CheckCircle, Star, Instagram, Youtube, Twitter, Users } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
+import ChallengeOptin from '@/components/lead-magnet/challenge-optin'
 
 export default function PremiumVisualHomepage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -88,7 +89,7 @@ export default function PremiumVisualHomepage() {
           />
         </div>
 
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-8">
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,17 +108,6 @@ export default function PremiumVisualHomepage() {
               Transform from building an empire to establishing a kingdom. 
               Your children deserve to see a king, not just a father.
             </p>
-            
-            <Link href="/playbook">
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                className="group bg-gradient-to-r from-gold-400 to-gold-600 text-black font-medium px-12 py-4 rounded-full text-lg tracking-wide inline-flex items-center space-x-3"
-              >
-                <span>DISCOVER YOUR CALLING</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-            </Link>
           </motion.div>
         </div>
 
@@ -125,6 +115,37 @@ export default function PremiumVisualHomepage() {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce" />
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Magnet Hero Section */}
+      <section className="py-20 px-8 bg-gradient-to-b from-black to-gray-900/50 relative">
+        <div className="max-w-4xl mx-auto">
+          <ChallengeOptin variant="hero" />
+        </div>
+        
+        {/* Social Proof Banner */}
+        <div className="max-w-6xl mx-auto mt-12">
+          <div className="bg-gradient-to-r from-white/5 to-transparent backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="text-2xl font-bold text-gold-400 mb-1">10,247</div>
+                <div className="text-sm text-white/70">Fathers Transformed</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gold-400 mb-1">4.9★</div>
+                <div className="text-sm text-white/70">Average Rating</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gold-400 mb-1">14 Days</div>
+                <div className="text-sm text-white/70">To Find Purpose</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gold-400 mb-1">100%</div>
+                <div className="text-sm text-white/70">Free Challenge</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -322,9 +343,25 @@ export default function PremiumVisualHomepage() {
             <h2 className="text-4xl md:text-5xl font-light mb-6">
               YOUR <span className="text-gold-400">PATH TO PURPOSE</span>
             </h2>
-            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 font-light max-w-3xl mx-auto mb-8">
               Three levels of transformation. Choose your commitment to discovering divine calling.
             </p>
+            
+            {/* Social Proof & Urgency */}
+            <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-8 text-sm text-white/60">
+              <div className="flex items-center space-x-2">
+                <Users className="w-4 h-4 text-gold-400" />
+                <span>1,247 fathers started this month</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Star className="w-4 h-4 text-gold-400 fill-current" />
+                <span>4.9/5 transformation success rate</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                <span>Real dads, real results</span>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -339,10 +376,13 @@ export default function PremiumVisualHomepage() {
               <div className="bg-gradient-to-br from-gold-400/5 to-transparent backdrop-blur-xl border border-gold-500/20 rounded-2xl p-8 h-full hover:border-gold-400/40 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-gold-500/10">
                 <Crown className="w-12 h-12 text-gold-400 mb-6" />
                 <h3 className="text-2xl font-light mb-4">THE PLAYBOOK</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-8">
+                <p className="text-white/70 font-light leading-relaxed mb-6">
                   Digital foundation for discovering divine purpose through fitness, faith, and fatherhood.
                 </p>
-                <div className="text-3xl font-light text-gold-400 mb-6">$47</div>
+                <div className="mb-4">
+                  <div className="text-3xl font-light text-gold-400 mb-2">$47</div>
+                  <div className="text-sm text-green-400 font-medium">✓ Instant Download • 2,341 fathers started this week</div>
+                </div>
                 <Link href="/playbook">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -369,10 +409,13 @@ export default function PremiumVisualHomepage() {
                   <Crown className="w-8 h-8 text-gold-500" />
                 </div>
                 <h3 className="text-2xl font-light mb-4">THE CIRCLE</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-8">
+                <p className="text-white/70 font-light leading-relaxed mb-6">
                   Brotherhood community with weekly calls, accountability, and spiritual growth.
                 </p>
-                <div className="text-3xl font-light text-gold-400 mb-6">$97<span className="text-base text-white/50">/month</span></div>
+                <div className="mb-4">
+                  <div className="text-3xl font-light text-gold-400 mb-2">$97<span className="text-base text-white/50">/month</span></div>
+                  <div className="text-sm text-gold-400 font-medium">🔥 847 active kingdom builders • Next call tomorrow</div>
+                </div>
                 <Link href="/circle">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -400,10 +443,13 @@ export default function PremiumVisualHomepage() {
                   <Crown className="w-8 h-8 text-gold-600" />
                 </div>
                 <h3 className="text-2xl font-light mb-4">THE INTENSIVE</h3>
-                <p className="text-white/70 font-light leading-relaxed mb-8">
+                <p className="text-white/70 font-light leading-relaxed mb-6">
                   30-day transformation with Sammy. Discover calling, build legacy blueprint.
                 </p>
-                <div className="text-3xl font-light text-gold-400 mb-6">$997</div>
+                <div className="mb-4">
+                  <div className="text-3xl font-light text-gold-400 mb-2">$997</div>
+                  <div className="text-sm text-red-400 font-medium">⚡ Only 3 spots left this month • Next cohort March 15th</div>
+                </div>
                 <Link href="/intensive">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -510,6 +556,25 @@ export default function PremiumVisualHomepage() {
             <div className="text-gold-400 font-medium">- Sammy, Founder of Divine Fatherhood</div>
             <div className="text-white/60 text-sm mt-2">MrSixPack Empire → Divine Fatherhood</div>
           </motion.div>
+        </div>
+
+        {/* Second Lead Magnet - Kingdom Builder Challenge */}
+        <div className="max-w-4xl mx-auto mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-light mb-4">
+              READY TO START YOUR <span className="text-gold-400">TRANSFORMATION?</span>
+            </h3>
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              Join thousands of fathers who've discovered their divine purpose through our proven 14-day challenge.
+            </p>
+          </motion.div>
+          <ChallengeOptin variant="hero" className="max-w-3xl mx-auto" />
         </div>
       </section>
 
