@@ -1,0 +1,19 @@
+{
+  "name": "Divine Fatherhood",
+  "version": "1.0.0",
+  "description": "Transform into the father your family deserves",
+  "author": "Sammy",
+  "license": "MIT",
+  "homepage": "https://divinefather.com",
+  "features": [
+    "AI-powered coaching tools",
+    "Personal development tracking",
+    "Community support",
+    "Expert guidance"
+  ],
+  "metadata": {
+    "created": "2025-12-25",
+    "lastUpdated": "2025-12-25",
+    "status": "active"
+  }
+}
